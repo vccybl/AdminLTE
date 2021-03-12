@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+
+  <title>ESEN CMS Web Site</title>
+
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="plugins/fontawesome-free/css/all.min.css">
+  <!-- overlayScrollbars -->
+  <link rel="stylesheet" href="plugins/overlayScrollbars/css/OverlayScrollbars.min.css">
+  <!-- Ionicons -->
+  <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+  <!-- iCheck for checkboxes and radio inputs -->
+  <link rel="stylesheet" href="../../plugins/icheck-bootstrap/icheck-bootstrap.min.css">
+  <!-- Theme style -->
+  <link rel="stylesheet" href="dist/css/adminlte.min.css">
+  <!-- Google Font: Source Sans Pro -->
+  <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
+  <link rel="icon" href="dist/img/logo1.png" type="image/png" />
+  <script src="dist/js/general.js"></script>
+  <script src="../node_modules/axios/dist/axios.min.js"></script>
+</head>
+<body class="hold-transition sidebar-mini layout-fixed layout-navbar-fixed layout-footer-fixed" onload="checkCookie()">
+<div class="wrapper">
+  <!-- Navbar -->
+  <nav class="main-header navbar navbar-expand navbar-white navbar-light">
+    <!-- Left navbar links -->
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
+      </li>
+      <li class="nav-item d-none d-sm-inline-block">
+        <a href="/inside.html" class="nav-link">Inicio</a>
+      </li>
+     
+    </ul>  
+  </nav>
+  <!-- /.navbar -->
+
+  <!-- Main Sidebar Container -->
+  <aside class="main-sidebar elevation-4 sidebar-light-success">
+    <!-- Brand Logo -->
+    <a href="/inside.html" class="brand-link">
+      <img src="dist/img/logo.svg" alt="ESEN Logo" >
+      
+    </a>
+
+    <!-- Sidebar -->
+    <div class="sidebar">
+      <!-- Sidebar user panel (optional) -->
+      <div class="user-panel mt-3 pb-3 mb-3 d-flex ">
+            
+      </div>
+
+      <div id="Menu"></div>
+    </div>
+    <!-- /.sidebar -->
+  </aside>
+
+  <!-- Content Wrapper. Contains page content -->
+  <div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <div class="content-header">
+      <div class="container-fluid">
+        <div class="row mb-2">
+          <div class="col-sm-6">
+            <h1 class="m-0 text-dark">Bienvenido@s</h1>
+          </div><!-- /.col -->
+          <div class="col-sm-6">
+            <ol class="breadcrumb float-sm-right">
+              <li class="breadcrumb-item"><a href="#">Admin</a></li>
+              <li class="breadcrumb-item active">Inicio</li>
+            </ol>
+          </div><!-- /.col -->
+        </div><!-- /.row -->
+      </div><!-- /.container-fluid -->
+    </div>
+    <!-- /.content-header -->
+
+    <!-- Main content -->
+    <section class="content">
+      <div class="container-fluid">
+        <!-- Info boxes -->
+      
+        <!-- /.row -->
+        <form role="form" id="RedSocialForm">
+        <h5 class="mb-3 text-center text-bold">Enlaces para redes sociales y APK</h5>
+        <div class="row">
+          <div class="col-md-12">
+            <div class="row">
+              <div class="col-md-6 col-sm-6 col-12">
+                <div class="info-box">
+                  <span class="info-box-icon bg-success"><i class="fab fa-facebook"></i></span>
+    
+                  <div class="info-box-content">
+                     <div class="form-group">
+                      <label for="exampleInputEmail1">Facebook</label>
+                      <input type="text" class="form-control" id="facebook_config" placeholder="Ej: http://www.facebook.com/sitio" value="">
+                    </div>
+                  </div>
+                  <div class="icheck-success float-left ">
+                    <input type="radio" name="r3"  title="Marcar para modificar" id="edit-redsocial1" value="0">
+                    <label for="edit-redsocial1"></label>
+                  </div>
+                  <!-- /.info-box-content -->
+                </div>
+                <!-- /.info-box -->
+              </div>
+              <!-- /.col -->
+              <div class="col-md-6 col-sm-6 col-12">
+                <div class="info-box">
+                  <span class="info-box-icon bg-success"><i class="fab fa-twitter"></i></span>
+    
+                  <div class="info-box-content">
+                    <div class="form-group">
+                      <label for="exampleInputEmail1">Twitter</label>
+                      <input type="text" class="form-control" id="twitter_config" placeholder="Ej: https://twitter.com/sitio" value="">
+                    </div>
+                  </div>
+                  <div class="icheck-success float-left ">
+                    <input type="radio" name="r3"  title="Marcar para modificar" id="edit-redsocial2" value="1">
+                    <label for="edit-redsocial2"></label>
+                  </div>
+                  <!-- /.info-box-content -->
+                </div>
+                <!-- /.info-box -->
+              </div>
+              <!-- /.col -->
+              </div>
+              <div class="row">
+              <div class="col-md-6 col-sm-6 col-12">
+                <div class="info-box">
+                  <span class="info-box-icon bg-success"><i class="fab fa-youtube"></i></span>
+    
+                  <div class="info-box-content">
+                    <div class="form-group">
+                      <label for="exampleInputEmail1">Youtube</label>
+                      <input type="text" class="form-control" id="youtube_config" placeholder="Ej: https://www.youtube.com/channel/UCcgqSM4YEo5vVQpqwN-MaNw" value="">
+                    </div>
+                  </div>
+                  <div class="icheck-success float-left ">
+                    <input type="radio" name="r3"  title="Marcar para modificar" id="edit-redsocial3" value="2">
+                    <label for="edit-redsocial3"></label>
+                  </div>
+                  <!-- /.info-box-content -->
+                </div>
+                <!-- /.info-box -->
+              </div>
+              <!-- /.col -->
+              <div class="col-md-6 col-sm-6 col-12">
+                <div class="info-box">
+                  <span class="info-box-icon bg-success"><i class="fab fa-linkedin"></i></span>
+    
+                  <div class="info-box-content">
+                    <div class="form-group">
+                      <label for="exampleInputEmail1">Linkedin</label>
+                      <input type="text" class="form-control" id="linkedin_config" placeholder="Ej: https://www.linkedin.com/company/gastroferias/" value="">
+                    </div>
+                  </div>
+                  <div class="icheck-success float-left ">
+                    <input type="radio" name="r3"  title="Marcar para modificar" id="edit-redsocial4" value="3">
+                    <label for="edit-redsocial4"></label>
+                  </div>
+                  <!-- /.info-box-content -->
+                </div>
+                <!-- /.info-box -->
+              </div>
+              <!-- /.col -->
+            </div>
+            <!-- /.row -->
+            <div class="row align-items-center align-content-center">
+              <div class="col-md-12">
+                <div class="row">
+                  <div class="col-md-6 col-sm-6 col-12">
+                    <div class="info-box">
+                      <span class="info-box-icon bg-success"><i class="fab fa-whatsapp"></i></span>
+                      <div class="info-box-content">
+                        <div class="form-group">
+                          <label for="whatsapp_config">Whatsapp</label>
+                          <div class="input-group mb-3">
+                            <div class="input-group-prepend">
+                            <span class="input-group-text"><i class="fas fa-phone"></i></span>
+                          </div>
+                          <input type="text" id="whatsapp_config" class="form-control" data-inputmask="'mask': ['+53 5999-9999', '+53 5999 9999']" >
+                        </div>
+                      </div>
+                      </div>
+                      <div class="icheck-success float-left ">
+                        <input type="radio" name="r3"  title="Marcar para modificar" id="edit-redsocial5" value="4">
+                        <label for="edit-redsocial5"></label>
+                      </div>
+                      <!-- /.info-box-content -->
+                    </div>
+                    <!-- /.info-box -->
+                  </div>
+                  <!-- /.col -->
+                  <div class="col-md-6 col-sm-6 col-12">
+                    <div class="info-box">
+                      <span class="info-box-icon bg-success"><i class="fab fa-telegram"></i></span>        
+                      <div class="info-box-content">
+                        <div class="form-group">
+                          <label for="telegram_config">Telegram</label>
+                          <input type="text" class="form-control" id="telegram_config" placeholder="Ej: https://www.linkedin.com/company/gastroferias/" value="">
+                        </div>
+                      </div>
+                      <div class="icheck-success float-left ">
+                        <input type="radio" name="r3"  title="Marcar para modificar" id="edit-redsocial6" value="5">
+                        <label for="edit-redsocial6"></label>
+                      </div>
+                      <!-- /.info-box-content -->
+                    </div>
+                    <!-- /.info-box -->
+                  </div>
+
+                  <!-- /.col -->
+                
+                  
+                </div>
+                <!-- /.row -->
+                
+                <!-- /.row -->
+                <div class="row">
+                    <!-- /.col -->
+                    <div class="col-md-6 col-sm-6 col-12">
+                      <div class="info-box">
+                        <div class="info-box-content">
+                          <div class="form-group form-inline">
+                            <div  class="pull-left"> <img src="dist/img/apklis.png"  title="APKLIS Logo" alt="APKLIS Logo" class="img-responsive"> </div>
+                            &nbsp; <input type="text" class="form-control input-lg col-lg-8" id="apklis_config" placeholder="Poner enlace a APKLIS" value="" maxlength="255">
+                            <div class="icheck-success float-left ">
+                              <input type="radio" name="r3"  title="Marcar para modificar" id="edit-redsocial7" value="6">
+                              <label for="edit-redsocial7"></label>
+                            </div>
+                          </div>
+                        </div>
+                        <!-- /.info-box-content -->
+                      </div>
+                      <!-- /.info-box -->
+                    </div>  
+                    <!-- /.col -->
+                    <div class="col-md-6 col-sm-6 col-12">
+                      <div class="info-box">
+                        <div class="info-box-content">
+                          <div class="form-group form-inline">
+                            <div class="pull-left"><img src="dist/img/googleplay.png"  title="Playstore Logo" alt="Playstore Logo" class="img-responsive"></div>      
+                            &nbsp; <input type="text" class="form-control input-lg col-lg-7" id="googleplay_config" placeholder="Poner enlace a GOOGLEPLAY" value="" maxlength="255" >
+                            <div class="icheck-success float-left ">
+                              <input type="radio" name="r3"  title="Marcar para modificar" id="edit-redsocial8" value="7">
+                              <label for="edit-redsocial8"></label>
+                            </div>
+                          </div>
+                        </div>
+                        <!-- /.info-box-content -->
+                      </div>
+                      <!-- /.info-box -->
+                      
+                    </div>
+                    <div class="col-md-12 col-sm-12 col-12 text-left">
+                      <input type="hidden" id="infored[]" name="infored[]" value="">
+                      <button type="submit" class="btn btn-success">Guardar</button>
+                      <button type="reset" class="btn btn-danger">Cancelar</button>
+                      <h5 class="mb-5 text-center"></h5>
+                    </div> 
+
+<!-- /.col -->
+
+                </div>
+                <!-- /.row -->
+            <!-- /.card -->
+          </div>
+          <!-- /.col -->
+        </div>
+        <!-- /.row -->
+
+      </form>
+      </div><!--/. container-fluid -->
+    </section>
+    <!-- /.content -->
+  </div>
+  <!-- /.content-wrapper -->
+
+  <!-- Control Sidebar -->
+  <aside class="control-sidebar control-sidebar-dark">
+    <!-- Control sidebar content goes here -->
+  </aside>
+  <!-- /.control-sidebar -->
+
+  <!-- Main Footer -->
+  <footer class="main-footer">
+    <strong>Copyright &copy; ESEN Development Team</a>.</strong>
+    All rights reserved.
+    <div class="float-right d-none d-sm-inline-block">
+      <b>Version</b> 1.0.0
+    </div>
+  </footer>
+</div>
+<!-- ./wrapper -->
+
+<!-- REQUIRED SCRIPTS -->
+<!-- jQuery -->
+<script src="plugins/jquery/jquery.min.js"></script>
+<!-- Bootstrap -->
+<script src="plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+<!-- InputMask -->
+<script src="../../plugins/moment/moment.min.js"></script>
+<script src="../../plugins/inputmask/min/jquery.inputmask.bundle.min.js"></script>
+
+<!-- overlayScrollbars -->
+<script src="plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js"></script>
+<!-- AdminLTE App -->
+<script src="dist/js/adminlte.js"></script>
+
+<!-- OPTIONAL SCRIPTS -->
+<script src="dist/js/demo.js"></script>
+
+<!-- PAGE PLUGINS -->
+<!-- jQuery Mapael -->
+<script src="plugins/jquery-mousewheel/jquery.mousewheel.js"></script>
+<script src="plugins/raphael/raphael.min.js"></script>
+
+
+<script src="plugins/jquery-mapael/jquery.mapael.min.js"></script>
+<script src="plugins/jquery-mapael/maps/usa_states.min.js"></script>
+
+
+
+<!-- ChartJS -->
+<script src="plugins/chart.js/Chart.min.js"></script>
+
+<!-- PAGE SCRIPTS -->
+<!--<script src="dist/js/pages/dashboard.js"></script>-->
+<script  src="../../dist/js/crud.js"></script>
+<script  src="dist/js/social.js"></script>
+<script>
+
+   var rs_list= '1,2,3,4,5,6,7,8';
+   var alista = rs_list.split(','); // array here
+  jQuery.each(alista, function(index, item) {
+    $('#edit-redsocial'+item).tooltip({'trigger':'focus', 'title': ''});
+});
+
+
+//Money Euro
+    //$('[data-mask]').inputmask()
+ $("#whatsapp_config").inputmask();
+      
+ $("#RedSocialForm").submit(function(event) {
+      const updatenow = async () => {
+              updateredes();
+      };  
+      var ejecutado=updatenow();
+      console.log(ejecutado)
+  });  </script>
+</body>
+</html>
