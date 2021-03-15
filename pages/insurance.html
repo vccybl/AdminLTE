@@ -1,0 +1,1745 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>ESEN CMS Web Site | Seguros</title>
+  <!-- Tell the browser to be responsive to screen width -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="../../plugins/fontawesome-free/css/all.min.css">
+  <!-- Ionicons 
+  <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">-->
+  <!-- DataTables -->
+  <link rel="stylesheet" href="../../plugins/datatables-bs4/css/dataTables.bootstrap4.css">
+  <!-- Theme style -->
+  <link rel="stylesheet" href="../../dist/css/adminlte.min.css">
+   <!-- summernote -->
+   <link rel="stylesheet" href="../plugins/summernote/summernote-bs4.css">
+  <!-- Google Font: Source Sans Pro 
+  <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">-->
+  <link rel="icon" href="/dist/img/logo1.png" type="image/png" />
+ 
+</head>
+<body class="hold-transition sidebar-mini">
+<div class="wrapper">
+  <!-- Navbar -->
+  <nav class="main-header navbar navbar-expand navbar-dark navbar-success">
+    <!-- Left navbar links -->
+    <div id="MainBarMenu"></div>
+  </nav>
+  <!-- /.navbar -->
+  <aside class="main-sidebar elevation-4 sidebar-light-success">
+    <!-- Brand Logo -->
+    <a href="/inside.html" class="brand-link">
+      <img src="../dist/img/logo.svg" alt="ESEN Logo" >
+      
+    </a>
+
+    <!-- Sidebar -->
+    <div class="sidebar">
+      <div id="Menu"></div>
+    </div>
+    <!-- /.sidebar -->
+  </aside>
+
+  <!-- Content Wrapper. Contains page content -->
+  <div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+      <div class="container-fluid">
+        <div class="row mb-2">
+          <div class="col-sm-6">
+            <h1>Seguros</h1>
+          </div>
+         
+        </div>
+      </div><!-- /.container-fluid -->
+    </section>
+
+    <!-- Main content -->
+    <section class="content">
+      <div class="row">
+        <div class="col-12">
+
+          <!-- /.card -->
+
+          <div class="card">
+            <div class="card-header">
+              <h3 class="card-title">Listado de Seguros</h3>
+            </div>
+            <!-- /.card-header -->
+            <div class="card-body">
+              <table id="insurance" class="table table-bordered table-striped table-hover table-responsive">
+                <thead>
+                <tr>
+                  <th>Acciones</th>
+                  <th>Id</th>
+                  <th>Título</th>
+                  <th>Icono</th>
+                  <th>Tipo</th>
+                  <th>URL</th>
+                  <th>Estado</th>
+                  <th>Pasos</th>
+                  <th>Casos</th>
+                  <th>Beneficios</th>                  
+                </tr>
+                </thead>
+                <tbody>               
+                <tr>
+                  <td>
+                    <button type="button" class="btn btn-success btn-xs" data-toggle="modal" data-target="#modal-edit-seguro"><i class="far fa-edit" title="Editar"></i></button>
+                    
+                   </td> 
+                  <td>1</td>
+                  <td>Vida
+                  </td>
+                  <td><img src="/dist/img/seguros/natural/stv.png" class="img-fluid mb-2" alt="Seguro de Vida" title="Seguro de Vida"/>
+                  </td>
+                  <td>Persona</td>
+                  <td>/stv</i>
+                       <td> <div class="custom-control custom-switch custom-switch-off-danger custom-switch-on-success">
+                      <input type="checkbox" class="custom-control-input" id="customSwitch1" checked>
+                      <label class="custom-control-label" for="customSwitch1"></label>
+                    </div></td>              
+              </button></td>
+              <td><button type="button" class="btn btn-block bg-gradient-success" data-toggle="modal" data-target="#modal-pasos">
+                <i class="fas fa-tasks"></i>
+            </button></td>
+            <td><button type="button" class="btn btn-block bg-gradient-success" data-toggle="modal" data-target="#modal-casos">
+              <i class="fas fa-address-card"></i>
+          </button></td>
+          <td><button type="button" class="btn btn-block bg-gradient-success" data-toggle="modal" data-target="#modal-beneficios">
+            <i class="fas fa-user-check"></i>
+        </button></td>        
+                </tr>
+                <tr>
+                  <td>
+                    <button type="button" class="btn btn-success btn-xs" data-toggle="modal" data-target="#modal-edit-seguro"><i class="far fa-edit" title="Editar"></i></button>
+                    
+                   </td> 
+                  <td>2</td>
+                  <td>Automotor
+                  </td>
+                  <td><img src="/dist/img/seguros/natural/automotor.png" class="img-fluid mb-2" alt="Seguro de Vida" title="Seguro de Vida"/>
+                  </td>
+                  <td>Persona</td>
+                  <td>/automotor-natural</i>
+                       <td> <div class="custom-control custom-switch custom-switch-off-danger custom-switch-on-success">
+                      <input type="checkbox" class="custom-control-input" id="customSwitch2" checked>
+                      <label class="custom-control-label" for="customSwitch2"></label>
+                    </div></td>              
+              </button></td>
+              <td><button type="button" class="btn btn-block bg-gradient-success" data-toggle="modal" data-target="#modal-pasos">
+                <i class="fas fa-tasks"></i>
+            </button></td>
+            <td><button type="button" class="btn btn-block bg-gradient-success" data-toggle="modal" data-target="#modal-casos">
+              <i class="fas fa-address-card"></i>
+          </button></td>
+          <td><button type="button" class="btn btn-block bg-gradient-success" data-toggle="modal" data-target="#modal-beneficios">
+            <i class="fas fa-user-check"></i>
+        </button></td>  
+                </tr>
+                <tr>
+                  <td>
+                    <button type="button" class="btn btn-success btn-xs" data-toggle="modal" data-target="#modal-edit-seguro"><i class="far fa-edit" title="Editar"></i></button>
+                    
+                   </td> 
+                  <td>3</td>
+                  <td>Bienes agrícolas
+                  </td>
+                  <td><img src="/dist/img/seguros/natural/bienes_agricolas.png" class="img-fluid mb-2" alt="Seguro de Vida" title="Seguro de Vida"/>
+                  </td>
+                  <td>Persona</td>
+                  <td>/agricolas-natural</i>
+                       <td> <div class="custom-control custom-switch custom-switch-off-danger custom-switch-on-success">
+                      <input type="checkbox" class="custom-control-input" id="customSwitch3" checked>
+                      <label class="custom-control-label" for="customSwitch3"></label>
+                    </div></td>              
+              </button></td>
+              <td><button type="button" class="btn btn-block bg-gradient-success" data-toggle="modal" data-target="#modal-pasos">
+                <i class="fas fa-tasks"></i>
+            </button></td>
+            <td><button type="button" class="btn btn-block bg-gradient-success" data-toggle="modal" data-target="#modal-casos">
+              <i class="fas fa-address-card"></i>
+          </button></td>
+          <td><button type="button" class="btn btn-block bg-gradient-success" data-toggle="modal" data-target="#modal-beneficios">
+            <i class="fas fa-user-check"></i>
+        </button></td>  
+                </tr>
+                <tr>
+                  <td>
+                    <button type="button" class="btn btn-success btn-xs" data-toggle="modal" data-target="#modal-edit-seguro"><i class="far fa-edit" title="Editar"></i></button>
+                    
+                   </td> 
+                  <td>4</td>
+                  <td>Viajes hacia el exterior
+                  </td>
+                  <td><img src="/dist/img/seguros/natural/viajes_out.png" class="img-fluid mb-2" alt="Seguro de Vida" title="Seguro de Vida"/>
+                  </td>
+                  <td>Persona</td>
+                  <td>/viajes-out-natural</i>
+                       <td> <div class="custom-control custom-switch custom-switch-off-danger custom-switch-on-success">
+                      <input type="checkbox" class="custom-control-input" id="customSwitch4" checked>
+                      <label class="custom-control-label" for="customSwitch4"></label>
+                    </div></td>              
+              </button></td>
+              <td><button type="button" class="btn btn-block bg-gradient-success" data-toggle="modal" data-target="#modal-pasos">
+                <i class="fas fa-tasks"></i>
+            </button></td>
+            <td><button type="button" class="btn btn-block bg-gradient-success" data-toggle="modal" data-target="#modal-casos">
+              <i class="fas fa-address-card"></i>
+          </button></td>
+          <td><button type="button" class="btn btn-block bg-gradient-success" data-toggle="modal" data-target="#modal-beneficios">
+            <i class="fas fa-user-check"></i>
+        </button></td>      
+                </tr>
+                <tr>
+                  <td>
+                    <button type="button" class="btn btn-success btn-xs" data-toggle="modal" data-target="#modal-edit-seguro"><i class="far fa-edit" title="Editar"></i></button>
+                    
+                   </td> 
+                  <td>5</td>
+                  <td>Viajes hacia Cuba
+                  </td>
+                  <td><img src="/dist/img/seguros/natural/viajes_in.png" class="img-fluid mb-2" alt="Seguro de Vida" title="Seguro de Vida"/>
+                  </td>
+                  <td>Persona</td>
+                  <td>/viajes-in-natural</i>
+                       <td> <div class="custom-control custom-switch custom-switch-off-danger custom-switch-on-success">
+                      <input type="checkbox" class="custom-control-input" id="customSwitch5" checked>
+                      <label class="custom-control-label" for="customSwitch5"></label>
+                    </div></td>              
+              </button></td>
+              <td><button type="button" class="btn btn-block bg-gradient-success" data-toggle="modal" data-target="#modal-pasos">
+                <i class="fas fa-tasks"></i>
+            </button></td>
+            <td><button type="button" class="btn btn-block bg-gradient-success" data-toggle="modal" data-target="#modal-casos">
+              <i class="fas fa-address-card"></i>
+          </button></td>
+          <td><button type="button" class="btn btn-block bg-gradient-success" data-toggle="modal" data-target="#modal-beneficios">
+            <i class="fas fa-user-check"></i>
+        </button></td>      
+                </tr>
+                <tr>
+                  <td>
+                    <button type="button" class="btn btn-success btn-xs" data-toggle="modal" data-target="#modal-edit-seguro"><i class="far fa-edit" title="Editar"></i></button>
+                    
+                   </td> 
+                  <td>6</td>
+                  <td>Patrimoniales Agropecuarios
+                  </td>
+                  <td><img src="/dist/img/seguros/natural/patrimoniales_agropecuarios.png" class="img-fluid mb-2" alt="Seguro de Vida" title="Seguro de Vida"/>
+                  </td>
+                  <td>Persona</td>
+                  <td>/patrimoniales-agropecuarios-natural</i>
+                       <td> <div class="custom-control custom-switch custom-switch-off-danger custom-switch-on-success">
+                      <input type="checkbox" class="custom-control-input" id="customSwitch6" checked>
+                      <label class="custom-control-label" for="customSwitch6"></label>
+                    </div></td>              
+              </button></td>
+              <td><button type="button" class="btn btn-block bg-gradient-success" data-toggle="modal" data-target="#modal-pasos">
+                <i class="fas fa-tasks"></i>
+            </button></td>
+            <td><button type="button" class="btn btn-block bg-gradient-success" data-toggle="modal" data-target="#modal-casos">
+              <i class="fas fa-address-card"></i>
+          </button></td>
+          <td><button type="button" class="btn btn-block bg-gradient-success" data-toggle="modal" data-target="#modal-beneficios">
+            <i class="fas fa-user-check"></i>
+        </button></td>  
+                </tr>
+                <tr>
+                  <td>
+                    <button type="button" class="btn btn-success btn-xs" data-toggle="modal" data-target="#modal-edit-seguro"><i class="far fa-edit" title="Editar"></i></button>
+                    
+                   </td> 
+                  <td>7</td>
+                  <td>Bienes pecuarios
+                  </td>
+                  <td><img src="/dist/img/seguros/natural/bienes_pecuarios.png" class="img-fluid mb-2" alt="Seguro de Vida" title="Seguro de Vida"/>
+                  </td>
+                  <td>Persona</td>
+                  <td>/bienes-pecuarios-natural</i>
+                       <td> <div class="custom-control custom-switch custom-switch-off-danger custom-switch-on-success">
+                      <input type="checkbox" class="custom-control-input" id="customSwitch7" checked>
+                      <label class="custom-control-label" for="customSwitch7"></label>
+                    </div></td>              
+              </button></td>
+              <td><button type="button" class="btn btn-block bg-gradient-success" data-toggle="modal" data-target="#modal-pasos">
+                <i class="fas fa-tasks"></i>
+            </button></td>
+            <td><button type="button" class="btn btn-block bg-gradient-success" data-toggle="modal" data-target="#modal-casos">
+              <i class="fas fa-address-card"></i>
+          </button></td>
+          <td><button type="button" class="btn btn-block bg-gradient-success" data-toggle="modal" data-target="#modal-beneficios">
+            <i class="fas fa-user-check"></i>
+        </button></td>     
+                </tr>
+                <tr>
+                  <td>
+                    <button type="button" class="btn btn-success btn-xs" data-toggle="modal" data-target="#modal-edit-seguro"><i class="far fa-edit" title="Editar"></i></button>
+                    
+                   </td> 
+                  <td>8</td>
+                  <td>Incendio
+                  </td>
+                  <td><img src="/dist/img/seguros/natural/incendio.png" class="img-fluid mb-2" alt="Seguro de Vida" title="Seguro de Vida"/>
+                  </td>
+                  <td>Persona</td>
+                  <td>/incendio-natural</i>
+                       <td> <div class="custom-control custom-switch custom-switch-off-danger custom-switch-on-success">
+                      <input type="checkbox" class="custom-control-input" id="customSwitch8" checked>
+                      <label class="custom-control-label" for="customSwitch8"></label>
+                    </div></td>              
+              </button></td>
+              <td><button type="button" class="btn btn-block bg-gradient-success" data-toggle="modal" data-target="#modal-pasos">
+                <i class="fas fa-tasks"></i>
+            </button></td>
+            <td><button type="button" class="btn btn-block bg-gradient-success" data-toggle="modal" data-target="#modal-casos">
+              <i class="fas fa-address-card"></i>
+          </button></td>
+          <td><button type="button" class="btn btn-block bg-gradient-success" data-toggle="modal" data-target="#modal-beneficios">
+            <i class="fas fa-user-check"></i>
+        </button></td>    
+                </tr>
+                
+                <tr>
+                  <td>
+                    <button type="button" class="btn btn-success btn-xs" data-toggle="modal" data-target="#modal-edit-seguro"><i class="far fa-edit" title="Editar"></i></button>
+                    
+                   </td> 
+                  <td>9</td>
+                  <td>Automotor
+                  </td>
+                  <td><img src="/dist/img/seguros/juridico/automotor.png" class="img-fluid mb-2" alt="Seguro de Vida" title="Seguro de Vida"/>
+                  </td>
+                  <td>Empresa</td>
+                  <td>/automotor-juridico</i>
+                       <td> <div class="custom-control custom-switch custom-switch-off-danger custom-switch-on-success">
+                      <input type="checkbox" class="custom-control-input" id="customSwitch9" checked>
+                      <label class="custom-control-label" for="customSwitch9"></label>
+                    </div></td>              
+              </button></td>
+              <td><button type="button" class="btn btn-block bg-gradient-success" data-toggle="modal" data-target="#modal-pasos">
+                <i class="fas fa-tasks"></i>
+            </button></td>
+            <td><button type="button" class="btn btn-block bg-gradient-success" data-toggle="modal" data-target="#modal-casos">
+              <i class="fas fa-address-card"></i>
+          </button></td>
+          <td><button type="button" class="btn btn-block bg-gradient-success" data-toggle="modal" data-target="#modal-beneficios">
+            <i class="fas fa-user-check"></i>
+        </button></td>    
+                </tr>
+                <tr>
+                  <td>
+                    <button type="button" class="btn btn-success btn-xs" data-toggle="modal" data-target="#modal-edit-seguro"><i class="far fa-edit" title="Editar"></i></button>
+                    
+                   </td> 
+                  <td>10</td>
+                  <td>Bienes agrícolas
+                  </td>
+                  <td><img src="/dist/img/seguros/juridico/bienes_agricolas.png" class="img-fluid mb-2" alt="Seguro de Vida" title="Seguro de Vida"/>
+                  </td>
+                  <td>Empresa</td>
+                  <td>/agricolas-juridico</i>
+                       <td> <div class="custom-control custom-switch custom-switch-off-danger custom-switch-on-success">
+                      <input type="checkbox" class="custom-control-input" id="customSwitch10" checked>
+                      <label class="custom-control-label" for="customSwitch10"></label>
+                    </div></td>              
+              </button></td>
+              <td><button type="button" class="btn btn-block bg-gradient-success" data-toggle="modal" data-target="#modal-pasos">
+                <i class="fas fa-tasks"></i>
+            </button></td>
+            <td><button type="button" class="btn btn-block bg-gradient-success" data-toggle="modal" data-target="#modal-casos">
+              <i class="fas fa-address-card"></i>
+          </button></td>
+          <td><button type="button" class="btn btn-block bg-gradient-success" data-toggle="modal" data-target="#modal-beneficios">
+            <i class="fas fa-user-check"></i>
+        </button></td>      
+                </tr>
+                <tr>
+                  <td>
+                    <button type="button" class="btn btn-success btn-xs" data-toggle="modal" data-target="#modal-edit-seguro"><i class="far fa-edit" title="Editar"></i></button>
+                    
+                   </td> 
+                  <td>11</td>
+                  <td>Viajes hacia el exterior
+                  </td>
+                  <td><img src="/dist/img/seguros/juridico/viajes_out.png" class="img-fluid mb-2" alt="Seguro de Vida" title="Seguro de Vida"/>
+                  </td>
+                  <td>Empresa</td>
+                  <td>/viajes-out-juridico</i>
+                       <td> <div class="custom-control custom-switch custom-switch-off-danger custom-switch-on-success">
+                      <input type="checkbox" class="custom-control-input" id="customSwitch11" checked>
+                      <label class="custom-control-label" for="customSwitch11"></label>
+                    </div></td>              
+              </button></td>
+              <td><button type="button" class="btn btn-block bg-gradient-success" data-toggle="modal" data-target="#modal-pasos">
+                <i class="fas fa-tasks"></i>
+            </button></td>
+            <td><button type="button" class="btn btn-block bg-gradient-success" data-toggle="modal" data-target="#modal-casos">
+              <i class="fas fa-address-card"></i>
+          </button></td>
+          <td><button type="button" class="btn btn-block bg-gradient-success" data-toggle="modal" data-target="#modal-beneficios">
+            <i class="fas fa-user-check"></i>
+        </button></td>          
+                </tr>
+                <tr>
+                  <td>
+                    <button type="button" class="btn btn-success btn-xs" data-toggle="modal" data-target="#modal-edit-seguro"><i class="far fa-edit" title="Editar"></i></button>
+                    
+                   </td> 
+                  <td>12</td>
+                  <td>Patrimoniales Agropecuarios
+                  </td>
+                  <td><img src="/dist/img/seguros/juridico/patrimoniales_agropecuarios.png" class="img-fluid mb-2" alt="Seguro de Vida" title="Seguro de Vida"/>
+                  </td>
+                  <td>Empresa</td>
+                  <td>/patrimoniales-agropecuarios-juridico</i>
+                       <td> <div class="custom-control custom-switch custom-switch-off-danger custom-switch-on-success">
+                      <input type="checkbox" class="custom-control-input" id="customSwitch12" checked>
+                      <label class="custom-control-label" for="customSwitch12"></label>
+                    </div></td>              
+              </button></td>
+              <td><button type="button" class="btn btn-block bg-gradient-success" data-toggle="modal" data-target="#modal-pasos">
+                <i class="fas fa-tasks"></i>
+            </button></td>
+            <td><button type="button" class="btn btn-block bg-gradient-success" data-toggle="modal" data-target="#modal-casos">
+              <i class="fas fa-address-card"></i>
+          </button></td>
+          <td><button type="button" class="btn btn-block bg-gradient-success" data-toggle="modal" data-target="#modal-beneficios">
+            <i class="fas fa-user-check"></i>
+        </button></td>    
+                </tr>
+                <tr>
+                  <td>
+                    <button type="button" class="btn btn-success btn-xs" data-toggle="modal" data-target="#modal-edit-seguro"><i class="far fa-edit" title="Editar"></i></button>
+                    
+                   </td> 
+                  <td>13</td>
+                  <td>Bienes pecuarios
+                  </td>
+                  <td><img src="/dist/img/seguros/juridico/bienes_pecuarios.png" class="img-fluid mb-2" alt="Seguro de Vida" title="Seguro de Vida"/>
+                  </td>
+                  <td>Empresa</td>
+                  <td>/bienes-pecuarios-juridico</i>
+                       <td> <div class="custom-control custom-switch custom-switch-off-danger custom-switch-on-success">
+                      <input type="checkbox" class="custom-control-input" id="customSwitch13" checked>
+                      <label class="custom-control-label" for="customSwitch13"></label>
+                    </div></td>              
+              </button></td>
+              <td><button type="button" class="btn btn-block bg-gradient-success" data-toggle="modal" data-target="#modal-pasos">
+                <i class="fas fa-tasks"></i>
+            </button></td>
+            <td><button type="button" class="btn btn-block bg-gradient-success" data-toggle="modal" data-target="#modal-casos">
+              <i class="fas fa-address-card"></i>
+          </button></td>
+          <td><button type="button" class="btn btn-block bg-gradient-success" data-toggle="modal" data-target="#modal-beneficios">
+            <i class="fas fa-user-check"></i>
+        </button></td>     
+                </tr>
+                <tr>
+                  <td>
+                    <button type="button" class="btn btn-success btn-xs" data-toggle="modal" data-target="#modal-edit-seguro"><i class="far fa-edit" title="Editar"></i></button>
+                    
+                   </td> 
+                  <td>14</td>
+                  <td>Incendio
+                  </td>
+                  <td><img src="/dist/img/seguros/juridico/incendio.png" class="img-fluid mb-2" alt="Seguro de Vida" title="Seguro de Vida"/>
+                  </td>
+                  <td>Empresa</td>
+                  <td>/incendio-juridico</i>
+                       <td> <div class="custom-control custom-switch custom-switch-off-danger custom-switch-on-success">
+                      <input type="checkbox" class="custom-control-input" id="customSwitch14" checked>
+                      <label class="custom-control-label" for="customSwitch14"></label>
+                    </div></td>              
+              </button></td>
+              <td><button type="button" class="btn btn-block bg-gradient-success" data-toggle="modal" data-target="#modal-pasos">
+                <i class="fas fa-tasks"></i>
+            </button></td>
+            <td><button type="button" class="btn btn-block bg-gradient-success" data-toggle="modal" data-target="#modal-casos">
+              <i class="fas fa-address-card"></i>
+          </button></td>
+          <td><button type="button" class="btn btn-block bg-gradient-success" data-toggle="modal" data-target="#modal-beneficios">
+            <i class="fas fa-user-check"></i>
+        </button></td>       
+                </tr>
+                
+                </tbody>
+                <tfoot>
+                <tr>
+                  <th>Acciones</th>
+                  <th>Id</th>
+                  <th>Título</th>
+                  <th>Icono</th>
+                  <th>Tipo</th>
+                  <th>URL</th>
+                  <th>Estado</th>
+                  <th>Pasos</th>
+                  <th>Casos</th>
+                  <th>Beneficios</th>
+                </tr>
+                </tfoot>
+              </table>
+            </div>
+            <!-- /.card-body -->
+          </div>
+          <!-- /.card -->
+        </div>
+        <!-- /.col -->
+      </div>
+      <!-- /.row -->
+    </section>
+    <!-- /.content -->
+  </div>
+  <!-- /.content-wrapper -->
+  <footer class="main-footer">
+    <strong>Copyright &copy; 2020 ESEN Development Team</a>.</strong>
+    All rights reserved.
+    <div class="float-right d-none d-sm-inline-block">
+      <b>Version</b> 1.0.0
+    </div>
+  </footer>
+
+<!-- /.modal -->
+
+    <div class="modal fade" id="modal-add-seguro">
+      <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h4 class="modal-title">Adicionando seguro...</h4>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+             <!-- general form elements -->
+             <div class="card card-success">
+              <div class="card-header">
+               
+              </div>
+              <!-- /.card-header -->
+              <!-- form start -->
+              <form role="form">
+                <div class="card-body">
+                  <div class="form-group">
+                    <label for="nombre-add">Nombre</label>
+                    <input type="text" class="form-control" id="nombre-add" placeholder="">
+                  </div>
+                  <div class="form-group">
+                    <label for="resumen-add">Texto del encabezado</label>
+                    <label for="resumen-seguro-add">Texto del encabezado</label>
+                    <textarea id="resumen-seguro-add" name="resumen-seguro-add" class="textarea" placeholder="Teclear texto del encabezado"
+                    style="width: 100%; height: 200px; font-size: 14px; line-height: 18px; border: 1px solid #dddddd; padding: 10px;">
+                    
+                  </textarea>
+                  </div>
+                   <div class="form-group">
+                    <label for="imagenLogo-add">Logo</label>
+                    <div class="input-group">
+                      <div class="custom-file">
+                        <input type="file" class="custom-file-input" id="imagenLogo-add">
+                        <label class="custom-file-label" for="imagenLogo-add">Seleccionar imagen</label>
+                      </div>
+                      <div class="input-group-append">
+                        <span class="input-group-text" id="">Upload</span>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label for="imagenBanner-add">Banner</label>
+                    <div class="input-group">
+                      <div class="custom-file">
+                        <input type="file" class="custom-file-input" id="imagenBanner-add">
+                        <label class="custom-file-label" for="imagenLogo">Seleccionar imagen</label>
+                      </div>
+                      <div class="input-group-append">
+                        <span class="input-group-text" id="">Upload</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!-- /.card-body -->
+  
+                <div class="card-footer">
+                  <button type="submit" class="btn btn-success">Guardar</button>
+                </div>
+              </form>
+            </div>
+            <!-- /.card -->
+  
+          </div>
+          <div class="modal-footer justify-content-between">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Regresar</button>
+           </div>
+        </div>
+        <!-- /.modal-content -->
+      </div>
+      <!-- /.modal-dialog -->
+    </div>
+  
+    <!-- /.modal -->
+       <!-- /.content-wrapper -->
+       <div class="modal fade" id="modal-edit-seguro">
+        <div class="modal-dialog modal-lg">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h4 class="modal-title">Editando seguro...</h4>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+               <!-- general form elements -->
+               <div class="card card-success">
+                <div class="card-header">
+                  <h3 class="card-title">ID:1</h3>
+                </div>
+                <!-- /.card-header -->
+                <!-- form start -->
+                <form role="form">
+                  <div class="card-body">
+                    <div class="form-group">
+                      <label for="titulo-seguro">Nombre</label>
+                      <input type="text" class="form-control" id="titulo-seguro" placeholder="Nueva modalidad para el seguro en Cuba">
+                    </div>
+                    <div class="form-group">
+                      <label for="resumen-seguro">Texto del encabezado</label>
+                      <textarea id="resumen-seguro" name="resumen-seguro" class="textarea" placeholder="Teclear texto del encabezado"
+                      style="width: 100%; height: 200px; font-size: 14px; line-height: 18px; border: 1px solid #dddddd; padding: 10px;">
+                      Ante la ocurrencia de un siniestro, si Ud. tuvo la previsión de contratar nuestros Seguros, es necesario que, como cliente, tenga claro qué hacer paso a paso, para poder acompañarle con la mayor efectividad en un momento adverso. Trate de mantener la calma y asegúrese de estar fuera de peligro. Es importante su actuación en este momento, para obtener la información lo más fidedigna y completa posible sobre las circunstancias en que ocurrieron los hechos. De esta forma podrá aprovechar todas las ventajas y los beneficios que ofrece la póliza de Seguros contratada.
+                    </textarea>
+                  </div>
+                    
+                    <div class="form-group">
+                      <label for="imagenLogo-seguro">Logo</label>
+                      <div class="input-group">
+                        <div class="custom-file">
+                          <input type="file" class="custom-file-input" id="imagenLogo-seguro">
+                          <label class="custom-file-label" for="imagenLogo-seguro">Seleccionar imagen</label>
+                        </div>
+                        <div class="input-group-append">
+                          <span class="input-group-text" id="">Upload</span>
+                        </div>
+                      </div>
+                    </div>
+  
+                    <div class="form-group">
+                      <label for="imagenBanner">Banner</label>
+                      <div class="input-group">
+                        <div class="custom-file">
+                          <input type="file" class="custom-file-input" id="imagenBanner">
+                          <label class="custom-file-label" for="imagenLogo">Seleccionar imagen</label>
+                        </div>
+                        <div class="input-group-append">
+                          <span class="input-group-text" id="">Upload</span>
+                        </div>
+                      </div>
+                    </div>
+                   
+                  </div>
+                  <!-- /.card-body -->
+  
+                  <div class="card-footer">
+                    <button type="submit" class="btn btn-success">Guardar</button>
+                  </div>
+                </form>
+              </div>
+              <!-- /.card -->
+  
+            </div>
+            <div class="modal-footer justify-content-between">
+              <button type="button" class="btn btn-default" data-dismiss="modal">Regresar</button>
+             </div>
+          </div>
+          <!-- /.modal-content -->
+        </div>
+        <!-- /.modal-dialog -->
+      </div>
+      <!-- /.modal -->
+
+
+   <!-- /.content-wrapper -->
+   
+  <!-- /.Beneficios -->
+  <div class="modal fade" id="modal-beneficios">
+    <div class="modal-dialog modal-lg modal-dialog-scrollable">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4 class="modal-title">Beneficios</h4>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <div class="col-sm-12 text-right mb-3">
+            <button type="button" class="btn btn-secondary" data-toggle="modal" data-target="#modal-add-beneficio">Adicionar</button>
+          </div>
+          <table id="beneficios-table" class="table table-bordered table-striped table-hover table-responsive">
+                <thead>
+                <tr>
+                  <th>Editar</th>
+                  <th>Id</th>
+                  <th>Texto</th>
+                  <th>Estado</th>
+                </tr>
+                </thead>
+                <tbody>               
+                <tr>
+                  <td class="text-center">
+                    <button type="button" class="btn btn-success btn-xs" data-toggle="modal" data-target="#modal-edit-beneficio"><i class="far fa-edit" title="Editar"></i></button>
+                    <button type="button" class="btn btn-danger btn-xs" data-toggle="modal" data-target="#modal-delete-beneficio" ><i class="far fa-times-circle" title="Eliminar"></i></button>
+                    </td>
+                  <td>1</td>
+                  <td>Cubre la muerte del asegurado por cualquier causa con sumas aseguradas desde 1000 hasta 50000 pesos y doble indemnización en caso de muerte accidental para la contratación colectiva optativa.
+                    <td> <div class="custom-control custom-switch custom-switch-off-danger custom-switch-on-success">
+                      <input type="checkbox" class="custom-control-input" id="customSwitchMB1" checked>
+                      <label class="custom-control-label" for="customSwitchMB1"></label>
+                    </div></td>                
+                </tr>
+                <tr>
+                  <td class="text-center">
+                    <button type="button" class="btn btn-success btn-xs" data-toggle="modal" data-target="#modal-edit-beneficio"><i class="far fa-edit" title="Editar"></i></button>
+                    <button type="button" class="btn btn-danger btn-xs" data-toggle="modal" data-target="#modal-delete-beneficio" ><i class="far fa-times-circle" title="Eliminar"></i></button>
+                    </td>
+                  <td>2</td>
+                  <td>Contrataciones colectivas con descuentos comerciales de hasta un 35%, en correspondencia con el número de personas que se aseguren.
+                    <td> <div class="custom-control custom-switch custom-switch-off-danger custom-switch-on-success">
+                      <input type="checkbox" class="custom-control-input" id="customSwitchMB2" checked>
+                      <label class="custom-control-label" for="customSwitchMB2"></label>
+                    </div></td>                
+                </tr>
+                <tr>
+                  <td class="text-center">
+                    <button type="button" class="btn btn-success btn-xs" data-toggle="modal" data-target="#modal-edit-beneficio"><i class="far fa-edit" title="Editar"></i></button>
+                    <button type="button" class="btn btn-danger btn-xs" data-toggle="modal" data-target="#modal-delete-beneficio" ><i class="far fa-times-circle" title="Eliminar"></i></button>
+                    </td>
+                  <td>3</td>
+                  <td>Bonificaciones a la prima de seguro en orden creciente hasta el 30% si el asegurado no ha recibido indemnizaciones por la cobertura de Incapacidad Permanente en el período de vigencia de la póliza.
+                    <td> <div class="custom-control custom-switch custom-switch-off-danger custom-switch-on-success">
+                      <input type="checkbox" class="custom-control-input" id="customSwitchMB3" checked>
+                      <label class="custom-control-label" for="customSwitchMB3"></label>
+                    </div></td>                
+                </tr>
+                </tbody>
+                <tfoot>
+                  <tr>
+                    <th>Editar</th>
+                    <th>Id</th>
+                    <th>Texto</th>
+                    <th>Estado</th>
+                  </tr>
+                </tfoot>
+              </table>
+        </div>
+        <div class="modal-footer justify-content-between">
+          <button type="button" class="btn btn-danger" data-dismiss="modal">Cerrar</button>
+          <button type="button" class="btn btn-success">Guardar</button>
+        </div>
+      </div>
+      <!-- /.modal-content -->
+    </div>
+    <!-- /.modal-dialog -->
+  </div>
+  
+
+ 
+
+ <!-- /.modal -->
+ <div class="modal fade" id="modal-edit-beneficio">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title">Editando beneficio...</h4>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="form-group">
+          <label for="textoCompletoB">Texto</label>
+          <textarea id="textoCompletoB" name="textoCompletoB" class="textarea" placeholder="Teclear texto completo"
+                style="width: 100%; height: 200px; font-size: 14px; line-height: 18px; border: 1px solid #dddddd; padding: 10px;">
+                Bonificaciones cuando haya contratado el riesgo de Choque y Vuelco, de un descuento de un diez por ciento (10%) de la prima a pagar en el primer año de renovación, incrementándose en cada renovación en un cinco por ciento (5%), hasta un límite máximo del cuarenta por ciento (40%).
+              
+              </textarea>
+        </div>
+      </div>
+      <div class="modal-footer justify-content-between">
+        <button type="button" class="btn btn-danger" data-dismiss="modal">Cerrar</button>
+        <button type="button" class="btn btn-success">Guardar</button>
+      </div>
+    </div>
+    <!-- /.modal-content -->
+  </div>
+  <!-- /.modal-dialog -->
+</div>
+ 
+
+
+<!-- /.modal -->
+<div class="modal fade" id="modal-add-beneficio">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title">Adicionando beneficio...</h4>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="form-group">
+          <label for="textoCompletoB-add">Texto</label>
+          <textarea id="textoCompletoB-add" name="textoCompletoB-add" class="textarea" placeholder="Teclear texto completo"
+                style="width: 100%; height: 200px; font-size: 14px; line-height: 18px; border: 1px solid #dddddd; padding: 10px;">
+                
+              
+              </textarea>
+        </div>
+      </div>
+      <div class="modal-footer justify-content-between">
+        <button type="button" class="btn btn-danger" data-dismiss="modal">Cerrar</button>
+        <button type="button" class="btn btn-success">Guardar</button>
+      </div>
+    </div>
+    <!-- /.modal-content -->
+  </div>
+  <!-- /.modal-dialog -->
+</div>
+
+<!-- /.modal -->
+<div class="modal fade" id="modal-delete-beneficio">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      
+      <div class="modal-body"><div class="col-md-12 text-center"> <p> ¿Esta seguro que desea eliminar el beneficio?</p></div>
+      </div>
+      <div class="modal-footer justify-content-between">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
+        <button type="button" class="btn btn-danger">Eliminar</button>
+      </div>
+    </div>
+    <!-- /.modal-content -->
+  </div>
+  <!-- /.modal-dialog -->
+</div>
+<!-- /. Fin beneficios -->
+    
+ <!-- /.Casos-->
+ <!-- /.modal -->
+ <div class="modal fade" id="modal-casos">
+  <div class="modal-dialog modal-lg modal-dialog-scrollable">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title">Casos reales</h4>
+         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>       
+      </div>
+      <div class="modal-body">
+        <div class="col-sm-12 text-right mb-3">
+          <button type="button" class="btn btn-secondary" data-toggle="modal" data-target="#modal-add-caso">Adicionar</button>
+        </div>
+        <table id="casos-table" class="table table-bordered table-striped table-hover table-responsive">
+          <thead>
+          <tr>
+            <th>Editar</th>
+            <th>Id</th>
+            <th>Título</th>
+            <th width='60%'>Texto</th>
+            <th>Estado</th>
+          </tr>
+          </thead>
+          <tbody>               
+          <tr>
+            <td class="text-center">
+              <button type="button" class="btn btn-success btn-xs" data-toggle="modal" data-target="#modal-edit-caso"><i class="far fa-edit" title="Editar"></i></button>
+              <button type="button" class="btn btn-danger btn-xs" data-toggle="modal" data-target="#modal-delete-caso" ><i class="far fa-times-circle" title="Eliminar"></i></button>
+              </td>
+            <td>1</td>
+            <td>Caso 1</td>
+            <td>Nuestro país, por su posición geográfica, kaskdasda asdkaoskdaosk naoksdnoaknoknoskdn ojansdoja nosjdnaosjndoajsndjasnd… </td>
+              <td> <div class="custom-control custom-switch custom-switch-off-danger custom-switch-on-success">
+                <input type="checkbox" class="custom-control-input" id="customSwitchMC1" checked>
+                <label class="custom-control-label" for="customSwitchMC1"></label>
+              </div></td>                
+          </tr>
+          <tr>
+            <td class="text-center">
+              <button type="button" class="btn btn-success btn-xs" data-toggle="modal" data-target="#modal-edit-caso"><i class="far fa-edit" title="Editar"></i></button>
+              <button type="button" class="btn btn-danger btn-xs" data-toggle="modal" data-target="#modal-delete-caso" ><i class="far fa-times-circle" title="Eliminar"></i></button>
+              </td>
+            <td>2</td>
+            <td>Caso 2</td>
+            <td>Nuestro país, por su posición geográfica, kaskdasda asdkaoskdaosk naoksdnoaknoknoskdn ojansdoja nosjdnaosjndoajsndjasnd… </td>
+              <td> <div class="custom-control custom-switch custom-switch-off-danger custom-switch-on-success">
+                <input type="checkbox" class="custom-control-input" id="customSwitchMC2" checked>
+                <label class="custom-control-label" for="customSwitchMC2"></label>
+              </div></td>                
+          </tr>
+          <tr>
+            <td class="text-center">
+              <button type="button" class="btn btn-success btn-xs" data-toggle="modal" data-target="#modal-edit-caso"><i class="far fa-edit" title="Editar"></i></button>
+              <button type="button" class="btn btn-danger btn-xs" data-toggle="modal" data-target="#modal-delete-caso" ><i class="far fa-times-circle" title="Eliminar"></i></button>
+              </td>
+            <td>3</td>
+            <td>Caso 3</td>
+            <td>Nuestro país, por su posición geográfica, kaskdasda asdkaoskdaosk naoksdnoaknoknoskdn ojansdoja nosjdnaosjndoajsndjasnd… </td>
+              <td> <div class="custom-control custom-switch custom-switch-off-danger custom-switch-on-success">
+                <input type="checkbox" class="custom-control-input" id="customSwitchMC3" checked>
+                <label class="custom-control-label" for="customSwitchMC3"></label>
+              </div></td>                
+          </tr>
+          </tbody>
+          <tfoot>
+            <tr>
+              <th>Editar</th>
+            <th>Id</th>
+            <th>Título</th>
+            <th>Texto</th>
+            <th>Estado</th>
+            </tr>
+          </tfoot>
+        </table>
+      </div>
+      <div class="modal-footer justify-content-between">
+        <button type="button" class="btn btn-danger" data-dismiss="modal">Cerrar</button>
+        <button type="button" class="btn btn-success">Guardar</button>
+      </div>
+    </div>
+    <!-- /.modal-content -->
+  </div>
+  <!-- /.modal-dialog -->
+</div>
+
+<!-- /.modal -->
+<div class="modal fade" id="modal-edit-caso">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title">Editando caso...</h4>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="form-group">
+          <label for="tituloC-edit">Título</label>
+          <input type="text" class="form-control" id="tituloC-edit" placeholder="">
+        </div>
+        <div class="form-group">
+          <label for="textoCompletoC">Texto</label>
+          <textarea id="textoCompletoC" name="textoCompletoC" class="textarea" placeholder="Teclear del caso"
+                style="width: 100%; height: 200px; font-size: 14px; line-height: 18px; border: 1px solid #dddddd; padding: 10px;">
+                Nuestro país, por su posición geográfica, kaskdasda asdkaoskdaosk naoksdnoaknoknoskdn ojansdoja nosjdnaosjndoajsndjasnd…
+              
+              </textarea>
+        </div>
+      </div>
+      <div class="modal-footer justify-content-between">
+        <button type="button" class="btn btn-danger" data-dismiss="modal">Cerrar</button>
+        <button type="button" class="btn btn-success">Guardar</button>
+      </div>
+    </div>
+    <!-- /.modal-content -->
+  </div>
+  <!-- /.modal-dialog -->
+</div>
+
+<!-- /.modal -->
+<div class="modal fade" id="modal-add-caso">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title">Adicionando caso...</h4>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="form-group">
+          <label for="tituloC-edit">Título</label>
+          <input type="text" class="form-control" id="tituloC-edit" placeholder="">
+        </div>
+        <div class="form-group">
+          <label for="textoCompletoC-add">Texto</label>
+          <textarea id="textoCompletoC-add" name="textoCompletoC-add" class="textarea" placeholder="Teclear texto del caso"
+                style="width: 100%; height: 200px; font-size: 14px; line-height: 18px; border: 1px solid #dddddd; padding: 10px;">
+                
+              
+              </textarea>
+        </div>
+      </div>
+      <div class="modal-footer justify-content-between">
+        <button type="button" class="btn btn-danger" data-dismiss="modal">Cerrar</button>
+        <button type="button" class="btn btn-success">Guardar</button>
+      </div>
+    </div>
+    <!-- /.modal-content -->
+  </div>
+  <!-- /.modal-dialog -->
+</div>
+
+ 
+    <!-- /.modal -->
+  <div class="modal fade" id="modal-delete-caso">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        
+        <div class="modal-body"><div class="col-md-12 text-center"> <p> ¿Esta seguro que desea eliminar el caso?</p></div>
+        </div>
+        <div class="modal-footer justify-content-between">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
+          <button type="button" class="btn btn-danger">Eliminar</button>
+        </div>
+      </div>
+      <!-- /.modal-content -->
+    </div>
+    <!-- /.modal-dialog -->
+  </div>
+  <!-- /.modal -->
+  <!-- /. Fin Casos -->
+
+                               
+   <!-- /.Pasos -->
+ <div class="modal fade" id="modal-pasos">
+  <div class="modal-dialog modal-xl modal-dialog-scrollable">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title">Pasos del seguro (CONTRATACION Y SINIESTRO)</h4>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="col-12 col-sm-12">
+          <div class="card card-primary card-outline card-outline-tabs">
+            <div class="card-header p-0 border-bottom-0">
+              <ul class="nav nav-tabs" id="custom-tabs-three-tab" role="tablist">
+                <li class="nav-item">
+                  <a class="nav-link active" id="custom-tabs-three-home-tab" data-toggle="pill" href="#custom-tabs-three-home" role="tab" aria-controls="custom-tabs-three-home" aria-selected="true">Contrate su seguro</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" id="custom-tabs-three-profile-tab" data-toggle="pill" href="#custom-tabs-three-profile" role="tab" aria-controls="custom-tabs-three-profile" aria-selected="false">Que hacer en caso de siniestro</a>
+                </li>
+               
+              </ul>
+            </div>
+            <div class="card-body">
+              
+              <div class="tab-content" id="custom-tabs-three-tabContent">
+               
+                <div class="tab-pane fade active show" id="custom-tabs-three-home" role="tabpanel" aria-labelledby="custom-tabs-three-home-tab">
+                  <div class="col-sm-12 text-right mb-3">
+                    <button type="button" class="btn btn-secondary" data-toggle="modal" data-target="#modal-add-paso-contrato">Adicionar</button>
+                  </div>
+                  <table id="pasos-contrato" class="table table-bordered table-striped table-hover table-responsive">
+          <thead>
+          <tr>
+            <th>Editar</th>
+            <th>Id</th>
+            <th>Título</th>
+            <th width='60%'>Texto</th>
+            <th>Estado</th>
+          </tr>
+          </thead>
+          <tbody>               
+            <tr>
+              <td class="text-center">
+                <button type="button" class="btn btn-success btn-xs" data-toggle="modal" data-target="#modal-edit-paso-contrato"><i class="far fa-edit" title="Editar"></i></button>
+                <button type="button" class="btn btn-danger btn-xs" data-toggle="modal" data-target="#modal-delete-paso-contrato" ><i class="far fa-times-circle" title="Eliminar"></i></button>
+              </td>
+              <td>1</td>
+              <td>Conozca los beneficios</td>
+              <td>Lea con detenimiento las condiciones Generales y Especiales de este seguro en Póliza de Seguro, si le resulta de interés le sugerimos evalúe cuánto le costaría en Calcule su seguro. Ante cualquier duda contacte a la Oficina de la ESEN más cercana y recibirá de nuestros expertos una atención personalizada.</td>
+                <td> <div class="custom-control custom-switch custom-switch-off-danger custom-switch-on-success">
+                  <input type="checkbox" class="custom-control-input" id="customSwitchMP1" checked>
+                  <label class="custom-control-label" for="customSwitchMP1"></label>
+                </div></td>                
+            </tr>
+            <tr>
+              <td class="text-center">
+                <button type="button" class="btn btn-success btn-xs" data-toggle="modal" data-target="#modal-edit-paso-contrato"><i class="far fa-edit" title="Editar"></i></button>
+                <button type="button" class="btn btn-danger btn-xs" data-toggle="modal" data-target="#modal-delete-paso-contrato" ><i class="far fa-times-circle" title="Eliminar"></i></button>
+                </td>
+              <td>2</td>
+              <td>Complete el Modelo de Solicitud de Seguro</td>
+              <td>Con el llenado de la Solicitud de Seguro se da inicio al proceso de contratación, este documento es parte del Contrato de Seguro. Ud. puede auxiliarse del representante de la aseguradora para completarlo o puede descargarlo, llenarlo siguiendo las instrucciones al final del mismo y hacerlo llegar a nuestras Directorio comerciales usando nuestras opciones de contacto. En este último caso le enviaremos un Agente a su domicilio para la contratación del servicio. Es su deber declarar con sinceridad todos los hechos y circunstancias que pueden influir en la valoración del riesgo de muerte o incapacidad que pretende cubrir con el seguro. </td>
+                <td> <div class="custom-control custom-switch custom-switch-off-danger custom-switch-on-success">
+                  <input type="checkbox" class="custom-control-input" id="customSwitchMP2" checked>
+                  <label class="custom-control-label" for="customSwitchMP2"></label>
+                </div></td>                
+            </tr>
+            <tr>
+              <td class="text-center">
+                <button type="button" class="btn btn-success btn-xs" data-toggle="modal" data-target="#modal-edit-paso-contrato"><i class="far fa-edit" title="Editar"></i></button>
+                <button type="button" class="btn btn-danger btn-xs" data-toggle="modal" data-target="#modal-delete-paso-contrato" ><i class="far fa-times-circle" title="Eliminar"></i></button>
+                </td>
+              <td>3</td>
+              <td>Pago de la Prima de Seguro</td>
+              <td>Aceptada la Solicitud de Seguro, nuestro Agente debidamente identificado o el Especialista de la UEB, procede a cobrar la prima de seguro, quedando a partir de ese momento vigente la póliza contratada por el período de un año. La principal obligación del cliente es el pago de la prima del seguro, el contrato estará vigente mientras se cumpla esta condición, eximiendo a la aseguradora de cualquier responsabilidad si se incumple con esta cláusula.</td>
+                <td> <div class="custom-control custom-switch custom-switch-off-danger custom-switch-on-success">
+                  <input type="checkbox" class="custom-control-input" id="customSwitchMP3" checked>
+                  <label class="custom-control-label" for="customSwitchMP3"></label>
+                </div></td>                
+            </tr>
+            <tr>
+              <td class="text-center">
+                <button type="button" class="btn btn-success btn-xs" data-toggle="modal" data-target="#modal-edit-paso-contrato"><i class="far fa-edit" title="Editar"></i></button>
+                <button type="button" class="btn btn-danger btn-xs" data-toggle="modal" data-target="#modal-delete-paso-contrato" ><i class="far fa-times-circle" title="Eliminar"></i></button>
+                </td>
+              <td>4</td>
+              <td>Firma del Contrato de Seguro (póliza)</td>
+              <td>El contrato de seguro se compone de la Solicitud de Seguro, las Condiciones Particulares, Generales y Especiales, recogidas en la Póliza de Seguros y los endosos. Este se formaliza con la firma del asegurado y el representante de la ESEN de las Condiciones Particulares de la Póliza de Seguros que entrega la aseguradora al cliente. Usted deberá aportar en este acto un sello por valor de cinco pesos en moneda nacional.</td>
+                <td> <div class="custom-control custom-switch custom-switch-off-danger custom-switch-on-success">
+                  <input type="checkbox" class="custom-control-input" id="customSwitchMP4" checked>
+                  <label class="custom-control-label" for="customSwitchMP4"></label>
+                </div></td>                
+            </tr>
+          </tbody>
+          <tfoot>
+            <tr>
+              <th>Editar</th>
+            <th>Id</th>
+            <th>Título</th>
+            <th>Texto</th>
+            <th>Estado</th>
+            </tr>
+          </tfoot>
+        </table>
+                </div>
+                <div class="tab-pane fade" id="custom-tabs-three-profile" role="tabpanel" aria-labelledby="custom-tabs-three-profile-tab">
+                  <div class="col-sm-12 text-right mb-3">
+                    <button type="button" class="btn btn-secondary" data-toggle="modal" data-target="#modal-add-paso-siniestro">Adicionar</button>
+                  </div>
+                  <table id="pasos-siniestro" class="table table-bordered table-striped table-hover table-responsive">
+          <thead>
+          <tr>
+            <th>Editar</th>
+            <th>Id</th>
+            <th>Título</th>
+            <th>Icono</th>
+            <th width='60%'>Texto</th>
+            <th>Estado</th>
+          </tr>
+          </thead>
+          <tbody>               
+            <tr>
+              <td class="text-center">
+                <button type="button" class="btn btn-success btn-xs" data-toggle="modal" data-target="#modal-edit-paso-siniestro"><i class="far fa-edit" title="Editar"></i></button>
+                <button type="button" class="btn btn-danger btn-xs" data-toggle="modal" data-target="#modal-delete-paso-siniestro" ><i class="far fa-times-circle" title="Eliminar"></i></button>
+              </td>
+              <td>1</td>
+              <td>Comunique la ocurrencia del siniestro</td>
+              <td><img src="/dist/img/seguros/natural/icono1-siniestro.png" class="img-fluid mb-2" alt="Comunique la ocurrencia del siniestro" title="Comunique la ocurrencia del siniestro"/>
+              <td>Si está en condiciones reúna toda la información posible sobre el siniestro, puede dejar constancia del suceso con su celular. Espere por la presencia de SEPSA o la autoridad competente, la asistencia especializada en caso de siniestro, es uno de los servicios contratados en su póliza. Tome además las precauciones necesarias para evitar o disminuir los daños del vehículo siniestrado.</td>
+                <td> <div class="custom-control custom-switch custom-switch-off-danger custom-switch-on-success">
+                  <input type="checkbox" class="custom-control-input" id="customSwitchMP1" checked>
+                  <label class="custom-control-label" for="customSwitchMP1"></label>
+                </div></td>                
+            </tr>
+            <tr>
+              <td class="text-center">
+                <button type="button" class="btn btn-success btn-xs" data-toggle="modal" data-target="#modal-edit-paso-siniestro"><i class="far fa-edit" title="Editar"></i></button>
+                <button type="button" class="btn btn-danger btn-xs" data-toggle="modal" data-target="#modal-delete-paso-siniestro" ><i class="far fa-times-circle" title="Eliminar"></i></button>
+                </td>
+              <td>2</td>
+              <td>Recopilación de información en el lugar y momento del siniestro</td>
+              <td><img src="/dist/img/seguros/natural/icono2-siniestro.png" class="img-fluid mb-2" alt="Comunique la ocurrencia del siniestro" title="Comunique la ocurrencia del siniestro"/>
+              <td>Si está en condiciones reúna toda la información posible sobre el siniestro, puede dejar constancia del suceso con su celular. Espere por la presencia de SEPSA o la autoridad competente, la asistencia especializada en caso de siniestro, es uno de los servicios contratados en su póliza. Tome además las precauciones necesarias para evitar o disminuir los daños del vehículo siniestrado....</td>
+                <td> <div class="custom-control custom-switch custom-switch-off-danger custom-switch-on-success">
+                  <input type="checkbox" class="custom-control-input" id="customSwitchMP2" checked>
+                  <label class="custom-control-label" for="customSwitchMP2"></label>
+                </div></td>                
+            </tr>
+            <tr>
+              <td class="text-center">
+                <button type="button" class="btn btn-success btn-xs" data-toggle="modal" data-target="#modal-edit-paso-siniestro"><i class="far fa-edit" title="Editar"></i></button>
+                <button type="button" class="btn btn-danger btn-xs" data-toggle="modal" data-target="#modal-delete-paso-siniestro" ><i class="far fa-times-circle" title="Eliminar"></i></button>
+                </td>
+              <td>3</td>
+              <td>Completamiento del modelo de reclamo</td>
+              <td><img src="/dist/img/seguros/natural/icono3-siniestro.png" class="img-fluid mb-2" alt="Comunique la ocurrencia del siniestro" title="Comunique la ocurrencia del siniestro"/>
+              <td>Complete el Modelo de Reclamo del Seguro, puede hacerlo Ud., su representante o el beneficiario; si lo cree necesario puede contactar a su Agente de Seguro. El plazo máximo para entregar el Modelo de Reclamo es de diez (10) días naturales.</td>
+                <td> <div class="custom-control custom-switch custom-switch-off-danger custom-switch-on-success">
+                  <input type="checkbox" class="custom-control-input" id="customSwitchMP3" checked>
+                  <label class="custom-control-label" for="customSwitchMP3"></label>
+                </div></td>                
+            </tr>
+            <tr>
+              <td class="text-center">
+                <button type="button" class="btn btn-success btn-xs" data-toggle="modal" data-target="#modal-edit-paso-siniestro"><i class="far fa-edit" title="Editar"></i></button>
+                <button type="button" class="btn btn-danger btn-xs" data-toggle="modal" data-target="#modal-delete-paso-siniestro" ><i class="far fa-times-circle" title="Eliminar"></i></button>
+                </td>
+              <td>4</td>
+              <td>Carga de prueba</td>
+              <td><img src="/dist/img/seguros/natural/icono4-siniestro.png" class="img-fluid mb-2" alt="Comunique la ocurrencia del siniestro" title="Comunique la ocurrencia del siniestro"/>
+              <td>Recuerde que para hacer efectivos sus derechos debe presentar toda la información que le sea posible para demostrarle a la aseguradora que el hecho ocurrido dio lugar a la materialización del riesgo que cubre su póliza. </td>
+                <td> <div class="custom-control custom-switch custom-switch-off-danger custom-switch-on-success">
+                  <input type="checkbox" class="custom-control-input" id="customSwitchMP4" checked>
+                  <label class="custom-control-label" for="customSwitchMP4"></label>
+                </div></td>                
+            </tr>
+            <tr>
+              <td class="text-center">
+                <button type="button" class="btn btn-success btn-xs" data-toggle="modal" data-target="#modal-edit-paso-siniestro"><i class="far fa-edit" title="Editar"></i></button>
+                <button type="button" class="btn btn-danger btn-xs" data-toggle="modal" data-target="#modal-delete-paso-siniestro" ><i class="far fa-times-circle" title="Eliminar"></i></button>
+                </td>
+              <td>5</td>
+              <td>Inspección y tasación del vehículo siniestrado</td>
+              <td><img src="/dist/img/seguros/natural/icono5-siniestro.png" class="img-fluid mb-2" alt="Comunique la ocurrencia del siniestro" title="Comunique la ocurrencia del siniestro"/>
+              <td>La entidad auxiliar del seguro contratada para realizar la tasación realizará esta operación en un término de diez (10) días naturales, posteriores a recibir el Modelo de Reclamación del Siniestro. El asegurado deberá estar presente en el momento de la tasación y aportar los datos e información que se le soliciten para la valoración de los daños, los cuales se clasificarán en leves o considerables; de estos últimos puede presumirse la necesidad de un cambio de la carrocería o dictaminar la baja técnica del vehículo o su pérdida total.  Como resultado de la tasación del vehículo se procederá a realizar la indemnización según las coberturas contratadas y en los términos de tiempo y condiciones que se pactaron en el contrato del seguro.</td>
+                <td> <div class="custom-control custom-switch custom-switch-off-danger custom-switch-on-success">
+                  <input type="checkbox" class="custom-control-input" id="customSwitchMP4" checked>
+                  <label class="custom-control-label" for="customSwitchMP4"></label>
+                </div></td>                
+            </tr>
+            <tr>
+              <td class="text-center">
+                <button type="button" class="btn btn-success btn-xs" data-toggle="modal" data-target="#modal-edit-paso-siniestro"><i class="far fa-edit" title="Editar"></i></button>
+                <button type="button" class="btn btn-danger btn-xs" data-toggle="modal" data-target="#modal-delete-paso-siniestro" ><i class="far fa-times-circle" title="Eliminar"></i></button>
+                </td>
+              <td>6</td>
+              <td>Pago de la indemnización</td>
+              <td><img src="/dist/img/seguros/natural/icono6-siniestro.png" class="img-fluid mb-2" alt="Comunique la ocurrencia del siniestro" title="Comunique la ocurrencia del siniestro"/>
+              <td>Dentro de los treinta (30) días naturales contados a partir de la fecha en que concluyan la inspección, tasación y otras investigaciones correspondientes, se procede al pago de la indemnización si resultó probado el hecho, con la entrega de un cheque por el importe de la tasa, a nombre del asegurado, sus beneficiarios, herederos o legatarios; en este caso deberá firmar el Modelo de Relevo de Responsabilidad, como constancia de su conformidad con el pago de las sumas aseguradas. En la cobertura por responsabilidad civil el tercero perjudicado recibirá la indemnización a través de la aseguradora o la Caja de Resarcimiento, según se disponga.  Si resultará denegada su reclamación recibirá respuesta mediante un Dictamen o carta de bien fundamentada y firmada por el Director de la Oficina Comercial con la cual suscribió su contrato.</td>
+                <td> <div class="custom-control custom-switch custom-switch-off-danger custom-switch-on-success">
+                  <input type="checkbox" class="custom-control-input" id="customSwitchMP4" checked>
+                  <label class="custom-control-label" for="customSwitchMP4"></label>
+                </div></td>                
+            </tr>
+          
+          </tbody>
+          <tfoot>
+            <tr>
+              <th>Editar</th>
+            <th>Id</th>
+            <th>Título</th>
+            <th>Icono</th>
+            <th>Texto</th>
+            <th>Estado</th>
+            </tr>
+          </tfoot>
+        </table>
+                </div>
+               
+              </div>
+            </div>
+            <!-- /.card -->
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer justify-content-between">
+        <button type="button" class="btn btn-danger" data-dismiss="modal">Cerrar</button>
+        <button type="button" class="btn btn-success">Guardar</button>
+      </div>
+    </div>
+    <!-- /.modal-content -->
+  </div>
+  <!-- /.modal-dialog -->
+</div>
+
+
+<!-- /.modal -->
+<div class="modal fade" id="modal-edit-paso-contrato">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title">Editando paso de contratación...</h4>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="form-group">
+          <label for="tituloC">Título</label>
+          <input type="text" class="form-control" id="tituloC" placeholder="patrimoniales-agropecuarios-natural No.1">
+        </div>
+        <div class="form-group">
+          <label for="textoCompletoC">Texto</label>
+          <textarea id="textoCompletoC" name="textoCompletoC" class="textarea" placeholder="Teclear texto completo"
+                style="width: 100%; height: 200px; font-size: 14px; line-height: 18px; border: 1px solid #dddddd; padding: 10px;">
+                Nuestro país, por su posición geográfica, kaskdasda asdkaoskdaosk naoksdnoaknoknoskdn ojansdoja nosjdnaosjndoajsndjasnd… 
+              
+              </textarea>
+        </div>
+       <div class="form-group">
+           
+            </div>
+        <div class="form-group form-inline">
+          <label for="activabotonS">Activar botón: &nbsp;</label>
+          <div class="custom-control custom-switch custom-switch-off-danger custom-switch-on-success">
+            <input type="checkbox" class="custom-control-input" id="activabotonC">
+            <label class="custom-control-label" for="activabotonC"></label>
+          </div>
+        </div>
+        
+        <div class="input-group" id="capaboton3C">              
+          <input type="text" class="form-control" placeholder="Texto del botón, hasta 150 caracteres" maxlength="150" id="txtbotonC">
+        </div>
+        <div class="input-group" id="capaboton4C">            
+          <div class="input-group-prepend">
+            <span class="input-group-text btn-success"><input type="radio" id="boton1C" value="3" name="boton">        
+            </span>
+          </div>
+          <input type="text" class="form-control" placeholder="Modal directorio">
+        </div>
+        <div class="input-group" id="capaboton1C">
+          
+          <div class="input-group-prepend">
+            <span class="input-group-text btn-success"><input type="radio" id="boton1C" value="1" name="boton">        
+            </span>
+          </div>
+          <input type="text" class="form-control" placeholder="http://www.esen.cu/" title="Poner solo el nombre del documento, el sistema incorpora el prefijo con el camino en el sitio web" id="enlaceC">
+        </div>
+        <div class="input-group" id="capaboton2C">
+          <div class="input-group-prepend">
+            <span class="input-group-text btn-success"><input type="radio" id="boton1C" value="2" name="boton"></span>
+          </div>
+          <div class="custom-file">
+            <input type="file" class="custom-file-input" id="ficheroC">
+            <label class="custom-file-label" for="fichero">Subir fichero</label>
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer justify-content-between">
+        <button type="button" class="btn btn-danger" data-dismiss="modal">Cerrar</button>
+        <button type="button" class="btn btn-success">Guardar</button>
+      </div>
+    </div>
+    <!-- /.modal-content -->
+  </div>
+  <!-- /.modal-dialog -->
+</div>
+
+
+<!-- /.modal -->
+ <div class="modal fade" id="modal-add-paso-contrato">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title">Adicionando paso de contratación...</h4>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="form-group">
+          <label for="tituloC-add">Título</label>
+          <input type="text" class="form-control" id="tituloC-add" placeholder="patrimoniales-agropecuarios-natural No.1">
+        </div>
+        <div class="form-group">
+          <label for="textoCompletoC-add">Texto</label>
+          <textarea id="textoCompletoC-add" name="textoCompletoC-add" class="textarea" placeholder="Teclear texto completo"
+                style="width: 100%; height: 200px; font-size: 14px; line-height: 18px; border: 1px solid #dddddd; padding: 10px;">
+                
+              
+              </textarea>
+        </div>
+        <div class="form-group">
+           
+        </div>
+    <div class="form-group form-inline">
+      <label for="activabotonS">Activar botón: &nbsp;</label>
+          <div class="custom-control custom-switch custom-switch-off-danger custom-switch-on-success">
+            <input type="checkbox" class="custom-control-input" id="activabotonC-add">
+            <label class="custom-control-label" for="activabotonC-add"></label>
+          </div>
+        </div>
+        
+        <div class="input-group" id="capaboton3C-add">              
+          <input type="text" class="form-control" placeholder="Texto del botón, hasta 150 caracteres" maxlength="150" id="txtbotonC-add">
+        </div>
+        <div class="input-group" id="capaboton4C-add">            
+          <div class="input-group-prepend">
+            <span class="input-group-text btn-success"><input type="radio" id="boton1C-add" value="3" name="boton">        
+            </span>
+          </div>
+          <input type="text" class="form-control" placeholder="Modal directorio">
+        </div>
+        <div class="input-group" id="capaboton1C-add">
+          
+          <div class="input-group-prepend">
+            <span class="input-group-text btn-success"><input type="radio" id="boton1C-add" value="1" name="boton">        
+            </span>
+          </div>
+          <input type="text" class="form-control" placeholder="http://www.esen.cu/" title="Poner solo el nombre del documento, el sistema incorpora el prefijo con el camino en el sitio web" id="enlaceC-add">
+        </div>
+        <div class="input-group" id="capaboton2C-add">
+          <div class="input-group-prepend">
+            <span class="input-group-text btn-success"><input type="radio" id="boton1C-add" value="2" name="boton"></span>
+          </div>
+          <div class="custom-file">
+            <input type="file" class="custom-file-input" id="ficheroC-add">
+            <label class="custom-file-label" for="ficheroC-add">Subir fichero</label>
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer justify-content-between">
+        <button type="button" class="btn btn-danger" data-dismiss="modal">Cerrar</button>
+        <button type="button" class="btn btn-success">Guardar</button>
+      </div>
+    </div>
+    <!-- /.modal-content -->
+  </div>
+  <!-- /.modal-dialog -->
+</div>
+
+ <!-- /.modal -->
+<div class="modal fade" id="modal-edit-paso-siniestro">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title">Editando paso sección 'Que hacer en caso de siniestro'...</h4>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="form-group">
+          <label for="tituloS">Título</label>
+          <input type="text" class="form-control" id="titulo"S placeholder="patrimoniales-agropecuarios-natural No.1">
+        </div>
+        <div class="form-group">
+          <label for="textoCompletoS">Texto</label>
+          <textarea id="textoCompletoS" name="textoCompletoS" class="textarea" placeholder="Teclear texto completo"
+                style="width: 100%; height: 200px; font-size: 14px; line-height: 18px; border: 1px solid #dddddd; padding: 10px;">
+                Nuestro país, por su posición geográfica, kaskdasda asdkaoskdaosk naoksdnoaknoknoskdn ojansdoja nosjdnaosjndoajsndjasnd… 
+              
+              </textarea>
+        </div>
+        <div class="form-group">
+          <label for="imagenIconoSiniestro-edit">Icono del paso</label>
+          <div class="input-group">
+            <div class="custom-file">
+              <input type="file" class="custom-file-input" id="imagenIconoSiniestro-edit">
+              <label class="custom-file-label" for="imagenIconoSiniestro-edit">Seleccionar imagen</label>
+            </div>
+            <div class="input-group-append">
+              <span class="input-group-text" id="">Upload</span>
+            </div>
+          </div>
+          <div class="form-group">
+           
+            </div>
+        <div class="form-group form-inline">
+          <label for="activabotonS">Activar botón: &nbsp;</label>
+          <div class="custom-control custom-switch custom-switch-off-danger custom-switch-on-success">
+            <input type="checkbox" class="custom-control-input" id="activabotonS">
+            <label class="custom-control-label" for="activabotonS"></label>
+          </div>
+        </div>
+        <div class="form-group">
+        <div class="input-group" id="capaboton3S">              
+          <input type="text" class="form-control" placeholder="Texto del botón, hasta 150 caracteres" maxlength="150" id="txtbotonS">
+        </div>
+        <div class="input-group" id="capaboton4S">            
+          <div class="input-group-prepend">
+            <span class="input-group-text btn-success"><input type="radio" id="boton1S" value="3" name="boton">        
+            </span>
+          </div>
+          <input type="text" class="form-control" placeholder="Modal directorio">
+        </div>
+        <div class="input-group" id="capaboton1S">
+          
+          <div class="input-group-prepend">
+            <span class="input-group-text btn-success"><input type="radio" id="boton1S" value="1" name="boton">        
+            </span>
+          </div>
+          <input type="text" class="form-control" placeholder="http://www.esen.cu/" title="Poner solo el nombre del documento, el sistema incorpora el prefijo con el camino en el sitio web" id="enlaceS">
+        </div>
+        <div class="input-group" id="capaboton2S">
+          <div class="input-group-prepend">
+            <span class="input-group-text btn-success"><input type="radio" id="boton1S" value="2" name="boton"></span>
+          </div>
+          <div class="custom-file">
+            <input type="file" class="custom-file-input" id="ficheroS">
+            <label class="custom-file-label" for="ficheroS">Subir fichero</label>
+          </div>
+        </div>
+    </div>
+      </div>
+      <div class="modal-footer justify-content-between">
+        <button type="button" class="btn btn-danger" data-dismiss="modal">Cerrar</button>
+        <button type="button" class="btn btn-success">Guardar</button>
+      </div>
+    </div>
+    </div>
+    <!-- /.modal-content -->
+  </div>
+  <!-- /.modal-dialog -->
+</div>
+
+
+
+<!-- /.modal -->
+
+
+<div class="modal fade" id="modal-add-paso-siniestro">
+<div class="modal-dialog">
+  <div class="modal-content">
+    <div class="modal-header">
+      <h4 class="modal-title">Adicionando paso sección 'Que hacer en caso de siniestro'...</h4>
+      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    <div class="modal-body">
+      <div class="form-group">
+        <label for="tituloS-add">Título</label>
+        <input type="text" class="form-control" id="tituloS-add" placeholder="">
+      </div>
+      <div class="form-group">
+        <label for="textoCompletoS-add">Texto</label>
+        <textarea id="textoCompletoS" name="textoCompletoS-add" class="textarea" placeholder="Teclear texto completo"
+              style="width: 100%; height: 200px; font-size: 14px; line-height: 18px; border: 1px solid #dddddd; padding: 10px;">
+                              
+            </textarea>
+      </div>
+      <div class="form-group">
+        <label for="imagenIconoSiniestro-add">Icono del paso</label>
+        <div class="input-group">
+          <div class="custom-file">
+            <input type="file" class="custom-file-input" id="imagenIconoSiniestro-add">
+            <label class="custom-file-label" for="imagenIconoSiniestro-add">Seleccionar imagen</label>
+          </div>
+          <div class="input-group-append">
+            <span class="input-group-text" id="">Upload</span>
+          </div>
+        </div>
+        
+        <div class="form-group">
+           
+        </div>
+    <div class="form-group form-inline">
+      <label for="activabotonS-add">Activar botón: &nbsp;</label>
+      <div class="custom-control custom-switch custom-switch-off-danger custom-switch-on-success">
+        <input type="checkbox" class="custom-control-input" id="activabotonS-add">
+        <label class="custom-control-label" for="activabotonS-add"></label>
+      </div>
+    </div>
+    <div class="form-group">
+      <div class="input-group" id="capaboton3S-add">              
+        <input type="text" class="form-control" placeholder="Texto del botón, hasta 150 caracteres" maxlength="150" id="txtbotonS-add">
+      </div>
+      <div class="input-group" id="capaboton4S-add">            
+        <div class="input-group-prepend">
+          <span class="input-group-text btn-success"><input type="radio" id="boton1S-add" value="3" name="boton">        
+          </span>
+        </div>
+        <input type="text" class="form-control" placeholder="Modal directorio">
+      </div>
+      <div class="input-group" id="capaboton1S-add">            
+        <div class="input-group-prepend">
+          <span class="input-group-text btn-success"><input type="radio" id="boton1S-add" value="1" name="boton">        
+          </span>
+        </div>
+        <input type="text" class="form-control" placeholder="http://www.esen.cu/" title="Poner solo el nombre del documento, el sistema incorpora el prefijo con el camino en el sitio web" id="enlaceS-add">
+      </div>
+      <div class="input-group" id="capaboton2S-add">
+        <div class="input-group-prepend">
+          <span class="input-group-text btn-success"><input type="radio" id="boton1S-add" value="2" name="boton"></span>
+        </div>
+        <div class="custom-file">
+          <input type="file" class="custom-file-input" id="ficheroS-add">
+          <label class="custom-file-label" for="ficheroS-add">Subir fichero</label>
+        </div>
+      </div>
+    </div>
+    </div>
+      
+    <div class="modal-footer justify-content-between">
+      <button type="button" class="btn btn-danger" data-dismiss="modal">Cerrar</button>
+      <button type="button" class="btn btn-success">Guardar</button>
+    </div>
+  </div>
+</div>
+  <!-- /.modal-content -->
+</div>
+<!-- /.modal-dialog -->
+</div>
+
+<!-- /.modal -->
+  <div class="modal fade" id="modal-delete-paso-siniestro">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        
+        <div class="modal-body"><div class="col-md-12 text-center"> <p> ¿Esta seguro que desea eliminar este paso de la seccion 'Que hacer en caso de siniestro'?</p></div>
+        </div>
+        <div class="modal-footer justify-content-between">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
+          <button type="button" class="btn btn-danger">Eliminar</button>
+        </div>
+      </div>
+      <!-- /.modal-content -->
+    </div>
+    <!-- /.modal-dialog -->
+  </div>
+  <!-- /.modal -->   
+<!-- /.modal -->
+  <div class="modal fade" id="modal-delete-paso-contrato">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        
+        <div class="modal-body"><div class="col-md-12 text-center"> <p> ¿Esta seguro que desea eliminar este paso del proceso de contratación del seguro?</p></div>
+        </div>
+        <div class="modal-footer justify-content-between">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
+          <button type="button" class="btn btn-danger">Eliminar</button>
+        </div>
+      </div>
+      <!-- /.modal-content -->
+    </div>
+    <!-- /.modal-dialog -->
+  </div>
+  <!-- /.modal -->   
+
+ <!-- /.Fin pasos -->
+
+
+ 
+  <!-- Control Sidebar -->
+  <aside class="control-sidebar control-sidebar-dark">
+    <!-- Control sidebar content goes here -->
+  </aside>
+  <!-- /.control-sidebar -->
+</div>
+<!-- ./wrapper -->
+
+<!-- jQuery -->
+<script src="../../plugins/jquery/jquery.min.js"></script>
+<!-- Bootstrap 4 -->
+<script src="../../plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+<!-- DataTables -->
+<script src="../../plugins/datatables/jquery.dataTables.js"></script>
+<script src="../../plugins/datatables-bs4/js/dataTables.bootstrap4.js"></script>
+<!-- AdminLTE App -->
+<script src="../../dist/js/adminlte.min.js"></script>
+<!-- AdminLTE for demo purposes -->
+<script src="../../dist/js/demo.js"></script>
+<script src="../../plugins/summernote/summernote-bs4.min.js"></script>
+<!-- page script -->
+<script>
+  $(function () {
+    $("#capaboton1C").css("display", "none");
+    $("#capaboton2C").css("display", "none");
+    $("#capaboton3C").css("display", "none");
+    $("#capaboton4C").css("display", "none");
+    $("#capaboton1S").css("display", "none");
+    $("#capaboton2S").css("display", "none");
+    $("#capaboton3S").css("display", "none");
+    $("#capaboton4S").css("display", "none");
+    $("#capaboton1C-add").css("display", "none");
+    $("#capaboton2C-add").css("display", "none");
+    $("#capaboton3C-add").css("display", "none");
+    $("#capaboton4C-add").css("display", "none");
+    $("#capaboton1S-add").css("display", "none");
+    $("#capaboton2S-add").css("display", "none");
+    $("#capaboton3S-add").css("display", "none");
+    $("#capaboton4S-add").css("display", "none");
+    $("#insurance").DataTable( {
+  "pageLength": 5,
+  "language": {
+            "url": "/dist/js/Spanish.json"
+        }
+} );
+$("#pasos-contrato").DataTable( {
+  "pageLength": 5,
+  "language": {
+            "url": "/dist/js/Spanish.json"
+        }
+} );
+$("#pasos-siniestro").DataTable( {
+  "pageLength": 5,
+  "language": {
+            "url": "/dist/js/Spanish.json"
+        }
+} );
+$("#casos-table").DataTable( {
+  "pageLength": 5,
+  "language": {
+            "url": "/dist/js/Spanish.json"
+        }
+} );
+$("#beneficios-table").DataTable( {
+  "pageLength": 5,
+  "language": {
+            "url": "/dist/js/Spanish.json"
+        }
+} );
+    // Summernote
+    $('.textarea').summernote()
+
+   //alert($('#activaboton').is(':checked'));
+      $('#activabotonC').click(function() {
+        //alert($('#activaboton').is(':checked'));
+        if ($('#activabotonC').is(':checked')== true){
+            $("#capaboton1C").css("display", "flex");
+            $("#capaboton2C").css("display", "flex");
+            $("#capaboton3C").css("display", "flex");
+            $("#capaboton4C").css("display", "flex");                    
+        }else{
+          $("#capaboton1C").css("display", "none");
+          $("#capaboton2C").css("display", "none");
+          $("#capaboton3C").css("display", "none");
+          $("#capaboton4C").css("display", "none");                 
+        }
+      });    
+      $('#activabotonC-add').click(function() {
+        if ($('#activabotonC-add').is(':checked')== true){        
+            $("#capaboton1C-add").css("display", "flex");
+            $("#capaboton2C-add").css("display", "flex");
+            $("#capaboton3C-add").css("display", "flex");
+            $("#capaboton4C-add").css("display", "flex");          
+        }else{    
+          $("#capaboton1C-add").css("display", "none");
+          $("#capaboton2C-add").css("display", "none");
+          $("#capaboton3C-add").css("display", "none");
+          $("#capaboton4C-add").css("display", "none");
+         
+        }
+      });    
+      $('#activabotonS').click(function() {
+        //alert($('#activaboton').is(':checked'));
+        if ($('#activabotonS').is(':checked')== true){           
+            $("#capaboton1S").css("display", "flex");
+            $("#capaboton2S").css("display", "flex");
+            $("#capaboton3S").css("display", "flex");
+            $("#capaboton4S").css("display", "flex");          
+        }else{         
+          $("#capaboton1S").css("display", "none");
+          $("#capaboton2S").css("display", "none");
+          $("#capaboton3S").css("display", "none");
+          $("#capaboton4S").css("display", "none");       
+        }
+      });
+      $('#activabotonS-add').click(function() {
+        if ($('#activabotonS-add').is(':checked')== true){           
+            $("#capaboton1S-add").css("display", "flex");
+            $("#capaboton2S-add").css("display", "flex");
+            $("#capaboton3S-add").css("display", "flex");
+            $("#capaboton4S-add").css("display", "flex");
+        }else{         
+          $("#capaboton1S-add").css("display", "none");
+          $("#capaboton2S-add").css("display", "none");
+          $("#capaboton3S-add").css("display", "none");
+          $("#capaboton4S-add").css("display", "none");
+        }
+      });        
+      $('#enlaceC').tooltip({'trigger':'focus', 'title': ''});
+      $('#enlaceC-add').tooltip({'trigger':'focus', 'title': ''});
+      $('#enlaceS').tooltip({'trigger':'focus', 'title': ''});
+      $('#enlaceS-add').tooltip({'trigger':'focus', 'title': ''});
+     
+     
+
+$('#openBtn').click(function(){
+	$('#myModal').modal({show:true});
+})
+
+  });
+</script>
+</body>
+</html>

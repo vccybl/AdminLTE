@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>ESEN CMS Web Site | Directorio</title>
+  <!-- Tell the browser to be responsive to screen width -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="../../plugins/fontawesome-free/css/all.min.css">
+  <!-- Ionicons 
+  <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">-->
+  <!-- DataTables -->
+  <link rel="stylesheet" href="../../plugins/datatables-bs4/css/dataTables.bootstrap4.min.css">
+  <!-- Tempusdominus Bbootstrap 4 -->
+  <link rel="stylesheet" href="../../plugins/tempusdominus-bootstrap-4/css/tempusdominus-bootstrap-4.min.css">
+  <!-- Select2 -->
+  <link rel="stylesheet" href="../../plugins/select2/css/select2.min.css">
+  <link rel="stylesheet" href="../../plugins/select2-bootstrap4-theme/select2-bootstrap4.min.css" >
+  <!-- Bootstrap4 Duallistbox -->
+  <link rel="stylesheet" href="../../plugins/bootstrap4-duallistbox/bootstrap-duallistbox.min.css">
+ <!-- Theme style -->
+  <link rel="stylesheet" href="../../dist/css/adminlte.min.css">
+  <!-- Google Font: Source Sans Pro 
+  <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">-->
+  <link rel="icon" href="/dist/img/logo1.png" type="image/png" />
+  <script src="../node_modules/axios/dist/axios.min.js"></script>
+</head>
+<body class="hold-transition sidebar-mini">
+<div class="wrapper">
+  <!-- Navbar -->
+  <nav class="main-header navbar navbar-expand navbar-dark navbar-success">
+    <!-- Left navbar links -->
+    <div id="MainBarMenu"></div>
+  </nav>
+  <!-- /.navbar -->
+  <aside class="main-sidebar elevation-4 sidebar-light-success">
+    <!-- Brand Logo -->
+    <a href="/inside.html" class="brand-link">
+      <img src="../dist/img/logo.svg" alt="ESEN Logo" >
+      
+    </a>
+
+    <!-- Sidebar -->
+    <div class="sidebar">
+      <div id="Menu"></div>
+    </div>
+    <!-- /.sidebar -->
+  </aside>
+
+  <!-- Content Wrapper. Contains page content -->
+  <div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+      <div class="container-fluid">
+        <div class="row mb-2">
+          <div class="col-sm-6">
+            <h1>Directorio</h1>
+          </div>
+          <div class="col-sm-6 text-right">
+            <button type="button" class="btn btn-secondary" data-toggle="modal" data-target="#modal-add">Adicionar</button>
+          </div>
+        </div>
+      </div><!-- /.container-fluid -->
+    </section>
+
+    <!-- Main content -->
+    <section class="content">
+      <div class="row">
+        <div class="col-12">
+
+          <!-- /.card -->
+
+          <div class="card">
+            <div class="card-header">
+             
+            </div>
+            <!-- /.card-header -->
+            <script>
+             
+              const directorio = async function makeGetRequest() {
+                let res = await axios.get('http://localhost:8080/api/general/oficinas?obtenerTodos=true');
+                let data = res.data;
+                return data;                
+              }
+              const createTR = (item,index) => {
+                var tableRef = document.getElementById('office').getElementsByTagName('tbody')[0];
+                var newRow   = tableRef.insertRow();
+
+                // Append a text node to the cell
+               
+                for (var j = 0; j < 9; j++) {
+                  // Create a <td> element and a text node, make the text
+                  // node the contents of the <td>, and put the <td> at
+                  // the end of the table row
+                  // Insert a cell in the row at index 0  
+                  var newCell  = newRow.insertCell(j);
+                  switch(j) {
+                    case 0:
+                      var cellText = document.createTextNode('Acciones');
+                      break;
+                    case 1:
+                      var cellText = document.createTextNode(item.id);
+                      break;
+                    case 2:
+                      var cellText = document.createTextNode(item.tipo);
+                      break;
+                    case 3:
+                      var cellText = document.createTextNode(item.nombre);
+                      break;
+                    case 4:
+                      var cellText = document.createTextNode(item.direccion);
+                      break;
+                    case 5:
+                      var cellText = document.createTextNode(item.telefono);
+                      break;
+                    case 6:
+                      var cellText = document.createTextNode(item.correo);
+                      break;  
+                    case 7:
+                      var cellText = document.createTextNode('Latitud:'+item.latitud+'\nLongitud:'+item.longitud);
+                      break;
+                    case 8:
+                      var texto="<div class=\"custom-control custom-switch custom-switch-off-danger custom-switch-on-success\"><input type=\"checkbox\" class=\"custom-control-input\" id=\"customSwitch1\" checked><label class=\"custom-control-label\" for=\"customSwitch1\"></label></div>"
+                      var cellText = document.createTextNode(texto);
+                      break;
+                    default:
+                      // code block
+                  }                  
+                  if (j == 0) newCell.innerHTML='<button type="button" class="btn btn-success btn-xs" data-toggle="modal" data-target="#modal-edit"><i class="far fa-edit"></i></button><button type="button" class="btn btn-danger btn-xs" data-toggle="modal" data-target="#modal-delete"><i class="far fa-times-circle" title="Eliminar"></i></button>'                
+                  else if (j == 8)  newCell.innerHTML='<div class=\"custom-control custom-switch custom-switch-off-danger custom-switch-on-success\"><input type=\"checkbox\" class=\"custom-control-input\" id=\"customSwitch1\" checked><label class=\"custom-control-label\" for=\"customSwitch1\"></label></div>'
+                  else newCell.appendChild(cellText); 
+                }
+               // Add some text to the new cells:
+                return
+              };
+              
+              const addTodosToDOM = todos => {
+              if (Array.isArray(todos) && todos.length > 0) {
+                  todos.map((todo,index) => {                    
+                    createTR(todo,index);
+                  });
+                } else if (todos) {
+                  createTR(todo);
+                }
+              };
+               
+              const main = async () => {
+                addTodosToDOM(await directorio());
+              };
+
+              main();          
+          </script>
+           <div id="mensaje"></div>
+            <div class="card-body">
+              <table id="office" class="table table-bordered table-striped table-hover table-responsive-lg">
+               <thead>
+                <tr>
+                  <th>Editar</th>
+                  <th>Id</th>
+                  <th>Tipo</th>
+                  <th>Nombre</th>
+                  <th>Dirección</th>
+                  <th>Teléfono</th>
+                  <th>Correo</th>
+                  <th>Datos geográficos</th>
+                  <th>Estado</th>
+                </tr>
+                </thead>
+                <tbody>
+                </tbody>
+                <tfoot>
+                <tr>
+                  <th>Editar</th>
+                  <th>Id</th>
+                  <th>Tipo</th>
+                  <th>Nombre</th>
+                  <th>Dirección</th>
+                  <th>Teléfono</th>
+                  <th>Correo</th>
+                  <th>Datos geográficos</th>
+                  <th>Estado</th>
+                </tr>
+                </tfoot>
+              </table>
+            </div>
+            <!-- /.card-body -->
+          </div>
+          <!-- /.card -->
+        </div>
+        <!-- /.col -->
+      </div>
+      <!-- /.row -->
+    </section>
+    <!-- /.content -->
+  </div>
+  <!-- /.content-wrapper -->
+  <footer class="main-footer">
+    <strong>Copyright &copy; 2020 ESEN Development Team</a>.</strong>
+    All rights reserved.
+    <div class="float-right d-none d-sm-inline-block">
+      <b>Version</b> 1.0.0
+    </div>
+  </footer>
+  <!-- Control Sidebar -->
+  <aside class="control-sidebar control-sidebar-dark">
+    <!-- Control sidebar content goes here -->
+  </aside>
+  <!-- /.control-sidebar -->
+</div>
+
+
+ <!-- /.content-wrapper -->
+ <div class="modal fade" id="modal-add">
+  <div class="modal-dialog">
+    <div class="modal-content">   
+      <div class="modal-header">
+        <h4 class="modal-title">Adicionando oficina...</h4>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>       
+      <div class="modal-body">
+        <div class="row">
+          <div class="col-md-12">
+            <div class="mb-3">
+              <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                  <span class="input-group-text"><i class="fas fa-sign"></i></span>
+                </div>
+                <input type="text" class="form-control" placeholder="Nombre">
+              </div>
+              
+             <div class="input-group mb-3">
+              <div class="input-group-prepend">
+                <span class="input-group-text"><i class="fas fa-building"></i></span>
+              </div>
+              <input type="text" class="form-control" placeholder="Dirección">
+            </div>
+            <div class="input-group mb-3">
+              <div class="input-group-prepend">
+                <span class="input-group-text"><i class="fas fa-phone"></i></span>
+              </div>
+              <input type="text" class="form-control" data-inputmask="'mask': ['999-999-9999 [x99999]', '+099 99 99 9999[9]-9999']" data-mask>
+            </div>
+            <div class="input-group mb-3">
+              <div class="input-group-prepend">
+                <span class="input-group-text"><i class="fas fa-envelope"></i></span>
+              </div>
+              <input type="text" class="form-control" id="email-edit" name="email-edit" data-inputmask-regex="[a-zA-Z0-9._%-]+@[a-zA-Z0-9-]+\.[a-zA-Z]+\.[a-zA-Z]{2,4}" im-insert="true">
+            </div>
+            <div class="input-group mb-3">
+              <div class="input-group-prepend">
+                <span class="input-group-text"><i class="fas fa-map-marker-alt"></i></span>
+              </div>
+              <input type="text" class="form-control" id="latitud-edit" name="latitud-edit"   title="Latitud" >
+            </div>
+            <div class="input-group mb-3">
+              <div class="input-group-prepend">
+                <span class="input-group-text"><i class="fas fa-globe-americas"></i></span>
+              </div>
+              <input type="text" class="form-control" id="longitud-edit" name="longitud-edit"  title="Longitud" >
+            </div>
+            <div class="input-group mb-3">
+             Estado: &nbsp;  <div class="custom-control custom-switch custom-switch-off-danger custom-switch-on-success">
+                  <input type="checkbox" class="custom-control-input" id="customSwitchM1" checked>
+                  <label class="custom-control-label" for="customSwitchM1"></label>
+                </div>
+             </div>
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer justify-content-between">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
+        <button type="button" class="btn btn-success">Guardar</button>
+      </div>
+    </div>
+   
+    </div>
+    <!-- /.modal-content -->
+  </div>
+  <!-- /.modal-dialog -->
+</div>
+<!-- /.modal -->
+<!-- /.content-wrapper -->
+<div class="modal fade" id="modal-delete">
+  <div class="modal-dialog">
+    <div class="modal-content">          
+      <div class="modal-body"><div class="col-md-12 text-center"> <p> ¿Esta seguro que desea eliminar la oficina?</p></div>
+      </div>
+      <div class="modal-footer justify-content-between">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
+        <button type="button" class="btn btn-danger">Eliminar</button>
+      </div>
+    </div>
+    <!-- /.modal-content -->
+  </div>
+  <!-- /.modal-dialog -->
+</div>
+<!-- /.modal -->
+
+    <div class="modal fade" id="modal-edit">
+      <div class="modal-dialog modal-xl">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h4 class="modal-title">Editando oficina...</h4>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <div class="row">
+              <div class="col-md-12">
+                <div class="mb-3">
+                  <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                      <span class="input-group-text"><i class="fas fa-sign"></i></span>
+                    </div>
+                    <input type="text" class="form-control" placeholder="Nombre">
+                  </div>
+                  
+                 <div class="input-group mb-3">
+                  <div class="input-group-prepend">
+                    <span class="input-group-text"><i class="fas fa-building"></i></span>
+                  </div>
+                  <input type="text" class="form-control" placeholder="Dirección">
+                </div>
+                <div class="input-group mb-3">
+                  <div class="input-group-prepend">
+                    <span class="input-group-text"><i class="fas fa-phone"></i></span>
+                  </div>
+                  <input type="text" class="form-control" data-inputmask="'mask': ['999-999-9999 [x99999]', '+099 99 99 9999[9]-9999']" data-mask>
+                </div>
+                <div class="input-group mb-3">
+                  <div class="input-group-prepend">
+                    <span class="input-group-text"><i class="fas fa-envelope"></i></span>
+                  </div>
+                  <input type="text" class="form-control" id="email-edit" name="email-edit" data-inputmask-regex="[a-zA-Z0-9._%-]+@[a-zA-Z0-9-]+\.[a-zA-Z]+\.[a-zA-Z]{2,4}" im-insert="true">
+                </div>
+                <div class="input-group mb-3">
+                  <div class="input-group-prepend">
+                    <span class="input-group-text"><i class="fas fa-map-marker-alt"></i></span>
+                  </div>
+                  <input type="text" class="form-control" id="latitud-edit" name="latitud-edit"   title="Latitud" >
+                </div>
+                <div class="input-group mb-3">
+                  <div class="input-group-prepend">
+                    <span class="input-group-text"><i class="fas fa-globe-americas"></i></span>
+                  </div>
+                  <input type="text" class="form-control" id="longitud-edit" name="longitud-edit"  title="Longitud" >
+                </div>
+                <div class="input-group mb-3">
+                 Estado: &nbsp;  <div class="custom-control custom-switch custom-switch-off-danger custom-switch-on-success">
+                      <input type="checkbox" class="custom-control-input" id="customSwitchM1" checked>
+                      <label class="custom-control-label" for="customSwitchM1"></label>
+                    </div>
+                 </div>
+              </div>
+            </div>
+          </div>
+          <div class="modal-footer justify-content-between">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
+            <button type="button" class="btn btn-success">Guardar</button>
+          </div>
+        </div>
+      </div>
+        <!-- /.modal-content -->
+      </div>
+      <!-- /.modal-dialog -->
+    </div>
+    <!-- /.modal -->
+
+   
+<!-- jQuery -->
+<script src="../../plugins/jquery/jquery.min.js"></script>
+<!-- Bootstrap 4 -->
+<script src="../../plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+<!-- DataTables -->
+<script src="../../plugins/datatables/jquery.dataTables.js"></script>
+<script src="../../plugins/datatables-bs4/js/dataTables.bootstrap4.js"></script>
+<!-- InputMask -->
+<script src="../../plugins/moment/moment.min.js"></script>
+<script src="../../plugins/inputmask/min/jquery.inputmask.bundle.min.js"></script>
+<!-- Tempusdominus Bootstrap 4 -->
+<script src="../../plugins/tempusdominus-bootstrap-4/js/tempusdominus-bootstrap-4.min.js"></script>
+<!-- Bootstrap Switch -->
+<script src="../../plugins/bootstrap-switch/js/bootstrap-switch.min.js"></script>
+<!-- AdminLTE App -->
+<script src="../../dist/js/adminlte.min.js"></script>
+<!-- AdminLTE for demo purposes -->
+<script src="../../dist/js/demo.js"></script>
+<!-- page script -->
+<script>
+  $(function () {
+   /* $("#office").DataTable( {
+  "pageLength": 5,
+    "language": {
+            "url": "/dist/js/Spanish.json"
+        }
+        
+    } );*/
+
+    $(document).ready(function() {
+    $('#office').DataTable( {
+      "pageLength": 5,
+      "language": {
+            "url": "/dist/js/Spanish.json"
+        },
+      initComplete: function () {
+            this.api().columns().every( function () {
+                var column = this;
+                var select = $('<select class="custom-select custom-select-sm form-control form-control-sm">><option value=""></option></select>')
+                    .appendTo( $(column.header()).empty() )
+                    .on( 'change', function () {
+                        var val = $.fn.dataTable.util.escapeRegex(
+                            $(this).val()
+                        );
+ 
+                        column
+                            .search( val ? '^'+val+'$' : '', true, false )
+                            .draw();
+                    } );
+ 
+                column.data().unique().sort().each( function ( d, j ) {
+                    select.append( '<option value="'+d+'">'+d+'</option>' )
+                } );
+            } );
+        }
+    } );
+} );
+
+
+$('#latitud-add').tooltip({'trigger':'focus', 'title': ''});
+$('#latitud-edit').tooltip({'trigger':'focus', 'title': ''});
+$('#longitud-add').tooltip({'trigger':'focus', 'title': ''});
+$('#longitud-edit').tooltip({'trigger':'focus', 'title': ''});
+//Money Euros
+ $('[data-mask]').inputmask()
+ $("#email-add").inputmask();
+ $("#email-edit").inputmask();
+ 
+$("#longitud-add").inputmask({
+mask: "-99.99999"
+
+});
+$("#latitud-add").inputmask({
+mask: "99.99999",
+});
+$("#longitud-edit").inputmask({
+mask: "-99.99999"
+
+});
+$("#latitud-edit").inputmask({
+mask: "99.99999",
+});
+ 
+$("input[data-bootstrap-switch]").each(function(){
+      $(this).bootstrapSwitch('state', $(this).prop('checked'));
+    });
+ 
+  });
+</script>
+</body>
+</html>

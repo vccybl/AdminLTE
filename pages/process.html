@@ -1,0 +1,520 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>ESEN CMS Web Site | Procesos</title>
+  <!-- Tell the browser to be responsive to screen width -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="../../plugins/fontawesome-free/css/all.min.css">
+  <!-- Ionicons 
+  <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">-->
+  <!-- DataTables -->
+  <link rel="stylesheet" href="../../plugins/datatables-bs4/css/dataTables.bootstrap4.css">
+  <!-- Select2 -->
+  <link rel="stylesheet" href="../../plugins/select2/css/select2.min.css">
+  <link rel="stylesheet" href="../../plugins/select2-bootstrap4-theme/select2-bootstrap4.min.css">
+  <!-- Bootstrap4 Duallistbox -->
+  <link rel="stylesheet" href="../../plugins/bootstrap4-duallistbox/bootstrap-duallistbox.min.css">
+ <!-- Tempusdominus Bbootstrap 4 -->
+ <link rel="stylesheet" href="../../plugins/tempusdominus-bootstrap-4/css/tempusdominus-bootstrap-4.min.css">
+  <!-- Theme style -->
+  <link rel="stylesheet" href="../../dist/css/adminlte.min.css">
+  <!-- summernote -->
+  <link rel="stylesheet" href="../plugins/summernote/summernote-bs4.css">
+  <!-- Google Font: Source Sans Pro 
+  <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">-->
+  <link rel="icon" href="/dist/img/logo1.png" type="image/png" />
+
+</head>
+<body class="hold-transition sidebar-mini">
+<div class="wrapper">
+  <!-- Navbar -->
+  <nav class="main-header navbar navbar-expand navbar-dark navbar-success">
+    <!-- Left navbar links -->
+    <div id="MainBarMenu"></div>
+  </nav>
+  <!-- /.navbar -->
+  <aside class="main-sidebar elevation-4 sidebar-light-success">
+    <!-- Brand Logo -->
+    <a href="/inside.html" class="brand-link">
+      <img src="../dist/img/logo.svg" alt="ESEN Logo" >
+      
+    </a>
+
+    <!-- Sidebar -->
+    <div class="sidebar">
+      <div id="Menu"></div>
+    </div>
+    <!-- /.sidebar -->
+  </aside>
+
+  <!-- Content Wrapper. Contains page content -->
+  <div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+      <div class="container-fluid">
+        <div class="row mb-2">
+          <div class="col-sm-6">
+            <h1>Procesos</h1>
+          </div>
+          <div class="col-sm-6">
+            <ol class="breadcrumb float-sm-right">
+              <li class="breadcrumb-item"><a href="#">Admin</a></li>
+              <li class="breadcrumb-item active">Procesos</li>
+            </ol>
+          </div>
+        </div>
+      </div><!-- /.container-fluid -->
+    </section>
+
+    <!-- Main content -->
+    <section class="content">
+      <div class="row">
+        <div class="col-12">
+
+          <!-- /.card -->
+
+          <div class="card">
+            <div class="card-header">
+              <h3 class="card-title">Listado de Procesos</h3>
+            </div>
+            <!-- /.card-header -->
+            <div class="card-body">
+              <table id="news" class="table table-bordered table-striped table-hover table-responsive">
+                <thead>
+                <tr>
+                  <th>Editar</th>
+                   <th>Id</th>
+                  <th>Nombre</th>
+                  <th>Icono</th>
+                  <th>Texto</th>
+                  <th>Gráficos</th>
+                  <th>Estado</th>
+                </tr>
+                </thead>
+                <tbody>
+               
+                <tr>
+                  <td>
+                    <button type="button" class="btn btn-success btn-xs" data-toggle="modal" data-target="#modal-edit"><i class="far fa-edit" title="Editar"></i></button>
+                   </td>
+                  <td>1</td>
+                  <td>Proceso Financiero 
+                  </td>
+                  <td><img src="/dist/img/procesos/proceso1.png" class="img-fluid mb-2" alt="proceso 1"/>
+                  </td>
+                  <td>*Protección al patrimonio por más de 55.147.2 millones de personas naturales, sector empresarial, cooperativas o negocios privados. </td>
+                  <td><button title="Editar" type="button" class="btn btn-block bg-gradient-success" data-toggle="modal" data-target="#modal-lg">
+                    <i class="far fa-edit"></i>
+                </button></td>
+                  
+                  <td>  <div class="custom-control custom-switch custom-switch-off-danger custom-switch-on-success">
+                      <input type="checkbox" class="custom-control-input" id="customSwitch1" checked>
+                      <label class="custom-control-label" for="customSwitch1"></label>
+                    </div></td>
+                </tr>
+                <tr>
+                  <td>
+                    <button type="button" class="btn btn-success btn-xs" data-toggle="modal" data-target="#modal-edit"><i class="far fa-edit" title="Editar"></i></button>
+                   </td>
+                  <td>2</td>
+                  <td>Proceso Comercial
+                  </td>
+                  <td><img src="/dist/img/procesos/proceso2.png" class="img-fluid mb-2" alt="proceso 2"/>
+                 </td>
+                  <td>*Nos preciamos de tener la confianza de más de 784.900 clientes, que ponen en nuestras manos la gestión de sus seguros ...</td>
+                  <td><button title="Editar" type="button" class="btn btn-block bg-gradient-success" data-toggle="modal" data-target="#modal-lg">
+                    <i class="fas fa-edit"></i>
+                </button></td>
+                  
+                  <td>  <div class="custom-control custom-switch custom-switch-off-danger custom-switch-on-success">
+                      <input type="checkbox" class="custom-control-input" id="customSwitch2" checked>
+                      <label class="custom-control-label" for="customSwitch2"></label>
+                    </div></td>
+                </tr>
+                <tr>
+                  <td>
+                    <button type="button" class="btn btn-success btn-xs" data-toggle="modal" data-target="#modal-edit"><i class="far fa-edit" title="Editar"></i></button>
+                   </td>
+                  <td>3</td>
+                  <td>Proceso Productivo 
+                  </td>
+                  <td><img src="/dist/img/procesos/proceso3.png" class="img-fluid mb-2" alt="proceso 3"/>
+                 </td>
+                  <td>*Ponemos a su disposición más de 56 productos del seguro, ajustándonos a sus intereses, en los diferentes ramos que comercializamos: personales, bienes y responsabilidad civil.  
+...                  </td>
+                  <td><button title="Editar" type="button" class="btn btn-block bg-gradient-success" data-toggle="modal" data-target="#modal-lg">
+                    <i class="fas fa-edit"></i>
+                </button></td>
+                  
+                  <td>  <div class="custom-control custom-switch custom-switch-off-danger custom-switch-on-success">
+                      <input type="checkbox" class="custom-control-input" id="customSwitch3" checked>
+                      <label class="custom-control-label" for="customSwitch3"></label>
+                    </div></td>
+                </tr>
+                <tr>
+                  <td>
+                    <button type="button" class="btn btn-success btn-xs" data-toggle="modal" data-target="#modal-edit"><i class="far fa-edit" title="Editar"></i></button>
+                   </td>
+                  <td>4</td>
+                  <td>Procesos Humanos 
+                  </td>
+                  <td><img src="/dist/img/procesos/proceso4.png" class="img-fluid mb-2" alt="proceso 4"/>
+                 </td>
+                  <td>*Nuestro Capital Humano suma más de 750 trabajadores. Nos distinguimos por bridar un servicio con una fuerza de trabajo madura, altamente calificada y comprometida. 
+...                  </td>
+                  <td><button title="Editar" type="button" class="btn btn-block bg-gradient-success" data-toggle="modal" data-target="#modal-lg">
+                    <i class="fas fa-edit"></i>
+                </button></td>
+                  
+                  <td>  <div class="custom-control custom-switch custom-switch-off-danger custom-switch-on-success">
+                      <input type="checkbox" class="custom-control-input" id="customSwitch4" checked>
+                      <label class="custom-control-label" for="customSwitch4"></label>
+                    </div></td>
+                </tr>
+               
+                </tbody>
+                <tfoot>
+                <tr>
+                  <th>Editar</th>
+                  <th>Id</th>
+                  <th>Nombre</th>
+                  <th>Icono</th>
+                  <th>Texto</th>
+                  <th>Gráficos</th>
+                  <th>Estado</th>
+                </tr>
+                </tfoot>
+              </table>
+            </div>
+            <!-- /.card-body -->
+          </div>
+          <!-- /.card -->
+        </div>
+        <!-- /.col -->
+      </div>
+      <!-- /.row -->
+    </section>
+    <!-- /.content -->
+  </div>
+  <!-- /.content-wrapper -->
+  <footer class="main-footer">
+    <strong>Copyright &copy; 2020 ESEN Development Team</a>.</strong>
+    All rights reserved.
+    <div class="float-right d-none d-sm-inline-block">
+      <b>Version</b> 1.0.0
+    </div>
+  </footer>
+
+  <div class="modal fade" id="modal-lg">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4 class="modal-title">Gráfico seleccionado</h4>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <table id="news" class="table table-bordered table-striped table-hover table-responsive">
+                <thead>
+                <tr>
+                  <th>Id</th>
+                  <th>Título</th>
+                  <th>Valor</th>
+                  <th>Componentes</th>
+                  <th>Estado</th>
+                </tr>
+                </thead>
+                <tbody>
+               
+                <tr>
+                 
+                  <td>1</td>
+                  <td>Valores Asegurados  (MP) 
+                  </td>
+                  <td>55,147,243.7</td>                  
+                  <td class="text-center"><button title="Actualizar Valores" type="button" class="btn btn-default" data-toggle="modal" data-target="#modal-default">
+                    <i class="fas fa-file-alt"></i>
+                  </button>
+                    </td>
+                  
+                  <td>  
+                    <div class="custom-control custom-switch custom-switch-off-danger custom-switch-on-success">
+                      <input type="checkbox" class="custom-control-input" id="customSwitchM1" checked>
+                      <label class="custom-control-label" for="customSwitchM1"></label>
+                    </div></td>
+                </tr>
+                <tr>
+               
+                  <td>2</td>
+                  <td>Ingresos por ramos del seguro (MP)
+                  </td>
+                  <td>578,541.6</td>                  
+                  <td class="text-center"><button title="Actualizar Valores" type="button" class="btn btn-default" data-toggle="modal" data-target="#modal-default">
+                    <i class="fas fa-file-alt"></i>
+                  </button></td>
+                  
+                  <td><div class="custom-control custom-switch custom-switch-off-danger custom-switch-on-success">
+                      <input type="checkbox" class="custom-control-input" id="customSwitchM2" checked>
+                      <label class="custom-control-label" for="customSwitchM2"></label>
+                    </div></td>
+                </tr>
+                <tr>
+                 
+                  <td>3</td>
+                  <td>Indemnizados por ramos del seguro (MP)
+                  </td>
+                  <td>443,816.3
+                  </td>                  
+                  <td class="text-center"><button title="Actualizar Valores" type="button" class="btn btn-default" data-toggle="modal" data-target="#modal-default">
+                    <i class="fas fa-file-alt"></i>
+                  </button></td>
+                  
+                  <td>  <div class="custom-control custom-switch custom-switch-off-danger custom-switch-on-success">
+                      <input type="checkbox" class="custom-control-input" id="customSwitchM3" checked>
+                      <label class="custom-control-label" for="customSwitchM3"></label>
+                    </div></td>
+                </tr>
+                <tr>
+                 
+                  <td>4</td>
+                  <td>Valores Indemnizados por ramos del seguro en eventos climatológicos Irma (Año 2017)
+                  </td>
+                  <td>-</td>                  
+                  <td class="text-center"><button title="Actualizar Valores"  type="button" class="btn btn-default" data-toggle="modal" data-target="#modal-default" >
+                    <i class="fas fa-file-alt"></i>
+                  </button></td>
+                  
+                  <td>  <div class="custom-control custom-switch custom-switch-off-danger custom-switch-on-success">
+                      <input type="checkbox" class="custom-control-input" id="customSwitchM4" checked>
+                      <label class="custom-control-label" for="customSwitchM4"></label>
+                    </div></td>
+                </tr>
+               
+                </tbody>
+                <tfoot>
+                  <tr>
+                   
+                    <th>Id</th>
+                    <th>Título</th>
+                    <th>Valor</th>
+                    <th>Componentes</th>
+                    <th>Estado</th>
+                  </tr>
+                </tfoot>
+              </table>
+        </div>
+        <div class="modal-footer justify-content-between">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
+          <button type="button" class="btn btn-success">Guardar</button>
+        </div>
+      </div>
+      <!-- /.modal-content -->
+    </div>
+    <!-- /.modal-dialog -->
+  </div>
+  <!-- /.modal -->
+  <div class="modal fade" id="modal-default">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4 class="modal-title">Componentes / Valor Seleccionado</h4>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <div class="row">
+            <div class="col-md-12">
+              <div class="card card-outline card-info collapsed-card">
+                <div class="card-header">
+                  <h3 class="card-title">
+                    Personales
+                    </h3>
+                  <!-- tools box -->
+                  <div class="card-tools">
+                    <button type="button" class="btn btn-tool btn-sm" data-card-widget="collapse" data-toggle="tooltip"
+                            title="Collapse">
+                      <i class="fas fa-plus"></i></button>
+                   
+                  </div>
+                  <!-- /. tools -->
+                </div>
+                <!-- /.card-header -->
+                <div class="card-body pad">
+                  <div class="mb-3">
+                    <div class="form-group">
+                      <label>Título</label>
+                      <input type="text" class="form-control" placeholder="Personales " value="Personales ">
+                    </div>
+                    <div class="form-group">
+                      <label>Valor</label>
+                  <input type="text" class="form-control" placeholder="39980363.7" value="39980363.7">
+    
+                  </div>
+                  <div class="form-group">
+                    <label>%</label>
+                <input type="text" class="form-control" placeholder="72.50" value="72.50">
+  
+                </div>
+                </div>
+                 
+                </div>
+              </div>
+            </div>
+            <!-- /.col-->
+          </div>
+          <div class="row">
+            <div class="col-md-12">
+              <div class="card card-outline card-info collapsed-card">
+                <div class="card-header">
+                  <h3 class="card-title">
+                    Bienes
+                    </h3>
+                  <!-- tools box -->
+                  <div class="card-tools">
+                    <button type="button" class="btn btn-tool btn-sm" data-card-widget="collapse" data-toggle="tooltip"
+                            title="Collapse">
+                      <i class="fas fa-plus"></i></button>
+                   
+                  </div>
+                  <!-- /. tools -->
+                </div>
+                <!-- /.card-header -->
+                <div class="card-body pad">
+                  <div class="mb-3">
+                    <div class="form-group">
+                      <label>Título</label>
+                      <input type="text" class="form-control" placeholder="Bienes" value="Bienes">
+                    </div>
+                    <div class="form-group">
+                      <label>Valor</label>
+                  <input type="text" class="form-control" placeholder="12,919,140.3" value="12,919,140.3">
+    
+                  </div>
+                  <div class="form-group">
+                    <label>%</label>
+                <input type="text" class="form-control" placeholder="23.43" value="23.43">
+  
+                </div>
+                </div>
+                 
+                </div>
+              </div>
+            </div>
+            <!-- /.col-->
+          </div>
+        </div>
+        <div class="modal-footer justify-content-between">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
+          <button type="button" class="btn btn-success">Guardar</button>
+        </div>
+      </div>
+      <!-- /.modal-content -->
+    </div>
+    <!-- /.modal-dialog -->
+  </div>
+  <!-- /.modal -->
+  
+    <!-- /.modal -->
+       <!-- /.content-wrapper -->
+       <div class="modal fade" id="modal-edit">
+        <div class="modal-dialog modal-lg">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h4 class="modal-title">Actualizar texto del proceso</h4>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+               <!-- general form elements -->
+               <div class="card card-success">
+                <div class="card-header">
+                  <h3 class="card-title">ID:1</h3>
+                </div>
+                <!-- /.card-header -->
+                <!-- form start -->
+                <form role="form">
+                  <div class="card-body">
+                   
+                    <div class="form-group">
+                      <label for="textoCompleto">Texto Completo</label>
+                      <textarea id="textoCompleto" name="textoCompleto" class="textarea" placeholder="Teclear texto completo"
+                            style="width: 100%; height: 200px; font-size: 14px; line-height: 18px; border: 1px solid #dddddd; padding: 10px;">
+                            *Protección al patrimonio por más de 55.147.2 millones de personas naturales, sector empresarial, cooperativas o negocios privados.
+                          
+                          </textarea>
+                    </div>
+                                     
+                  </div>
+                  <!-- /.card-body -->
+  
+                  <div class="card-footer">
+                   
+                  </div>
+                </form>
+              </div>
+              <!-- /.card -->
+  
+            </div>
+            <div class="modal-footer justify-content-between">
+              <button type="button" class="btn btn-default" data-dismiss="modal">Regresar</button>
+              <button type="submit" class="btn btn-success pull-right">Guardar</button>
+             </div>
+          </div>
+          <!-- /.modal-content -->
+        </div>
+        <!-- /.modal-dialog -->
+      </div>
+      <!-- /.modal -->
+
+      
+  <!-- Control Sidebar -->
+  <aside class="control-sidebar control-sidebar-dark">
+    <!-- Control sidebar content goes here -->
+  </aside>
+  <!-- /.control-sidebar -->
+</div>
+<!-- ./wrapper -->
+
+<!-- jQuery -->
+<script src="../../plugins/jquery/jquery.min.js"></script>
+<!-- Bootstrap 4 -->
+<script src="../../plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+<!-- DataTables -->
+<script src="../../plugins/datatables/jquery.dataTables.js"></script>
+<script src="../../plugins/datatables-bs4/js/dataTables.bootstrap4.js"></script>
+<!-- InputMask -->
+<script src="../../plugins/moment/moment.min.js"></script>
+<script src="../../plugins/inputmask/min/jquery.inputmask.bundle.min.js"></script>
+<!-- Tempusdominus Bootstrap 4 -->
+<script src="../../plugins/tempusdominus-bootstrap-4/js/tempusdominus-bootstrap-4.min.js"></script>
+<!-- Bootstrap Switch -->
+<script src="../../plugins/bootstrap-switch/js/bootstrap-switch.min.js"></script>
+<!-- AdminLTE App -->
+<script src="../../dist/js/adminlte.min.js"></script>
+<!-- AdminLTE for demo purposes -->
+<script src="../../dist/js/demo.js"></script>
+<script src="../../plugins/summernote/summernote-bs4.min.js"></script>
+<!-- page script -->
+<script>
+  $(function () {
+    $("#news").DataTable( {
+  "pageLength": 5,
+  "language": {
+            "url": "/dist/js/Spanish.json"
+        }
+} );
+$("input[data-bootstrap-switch]").each(function(){
+      $(this).bootstrapSwitch('state', $(this).prop('checked'));
+    });
+    $('.textarea').summernote()
+  });
+</script>
+</body>
+</html>

@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>ESEN CMS Web Site | Banners</title>
+  <!-- Tell the browser to be responsive to screen width -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" href="/dist/img/logo1.png" type="image/png" />
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="../plugins/fontawesome-free/css/all.min.css">
+  <!-- iCheck for checkboxes and radio inputs -->
+  <link rel="stylesheet" href="../../plugins/icheck-bootstrap/icheck-bootstrap.min.css">
+  <!-- Ekko Lightbox -->
+  <link rel="stylesheet" href="../plugins/ekko-lightbox/ekko-lightbox.css">
+  <!-- Ionicons 
+  <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">-->
+   <!-- Select2 -->
+   <link rel="stylesheet" href="../../plugins/select2/css/select2.min.css">
+   <link rel="stylesheet" href="../../plugins/select2-bootstrap4-theme/select2-bootstrap4.min.css">
+   <!-- Bootstrap4 Duallistbox -->
+   <link rel="stylesheet" href="../../plugins/bootstrap4-duallistbox/bootstrap-duallistbox.min.css">
+  <!-- Tempusdominus Bbootstrap 4 -->
+  <link rel="stylesheet" href="../../plugins/tempusdominus-bootstrap-4/css/tempusdominus-bootstrap-4.min.css">
+  <!-- Theme style -->
+  <link rel="stylesheet" href="../dist/css/adminlte.min.css">
+  <!-- summernote -->
+  <link rel="stylesheet" href="../plugins/summernote/summernote-bs4.css">
+  <!-- Google Font: Source Sans Pro 
+  <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">-->
+   <link rel="icon" href="/dist/img/logo1.png" type="image/png" />
+</head>
+<body class="hold-transition sidebar-mini layout-fixed layout-navbar-fixed layout-footer-fixed">
+<div class="wrapper">
+  <!-- Navbar -->
+  <nav class="main-header navbar navbar-expand navbar-dark navbar-success">
+    <!-- Left navbar links -->
+    <div id="MainBarMenu"></div>
+  </nav>
+  <!-- /.navbar -->
+<!-- Main Sidebar Container -->
+<aside class="main-sidebar elevation-4 sidebar-light-success">
+    <!-- Brand Logo -->
+    <a href="/inside.html" class="brand-link" target="_blank">
+      <img src="../dist/img/logo.svg" alt="ESEN Logo" >
+      
+    </a>
+
+    <!-- Sidebar -->
+    <div class="sidebar">
+      <!-- Sidebar user panel (optional) -->
+      <div class="user-panel mt-3 pb-3 mb-3 d-flex ">
+            
+      </div>
+
+      <div id="Menu"></div>
+    </div>
+    <!-- /.sidebar -->
+  </aside>
+
+  <!-- Content Wrapper. Contains page content -->
+  <div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+      <div class="container-fluid">
+        <div class="row mb-2">
+          <div class="col-sm-6">
+            <h1>Banners</h1>
+          </div>
+          <div class="col-sm-6 text-right">
+            <button type="button" class="btn btn-secondary" data-toggle="modal" data-target="#modal-add">Adicionar</button>
+          </div>
+        </div>
+      </div><!-- /.container-fluid -->
+    </section>
+
+    <!-- Main content -->
+    <section class="content">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-12">
+            <div class="card card-primary">
+              <div class="card-header">
+                <div class="card-title">
+                  Listado de Banners de la web
+                </div>
+              </div>
+             
+                <div class="card-body">
+                  
+                  <div class="mb-2">           
+                     
+                      <button type="button" class="btn btn-success" data-toggle="modal" data-target="#modal-edit">Editar</button>
+                      <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#modal-delete">Eliminar</button>
+                    <div class="float-right">
+                      <a class="btn btn-secondary" href="javascript:void(0)" data-shuffle> Reordenar </a>
+                      <select class="custom-select" style="width: auto;" data-sortOrder>
+                        <option value="index"> Ordenar por posicion</option>
+                        <option value="sortData"> Ordenar por titulo</option>
+                        <option value="sortData"> Ordenar por estado</option>
+                      </select>
+                      <div class="btn-group">
+                        <a class="btn btn-default" href="javascript:void(0)" data-sortAsc> Ascendente </a>
+                        <a class="btn btn-default" href="javascript:void(0)" data-sortDesc> Descendente </a>
+                      </div>
+                    </div>
+                  </div>
+                
+                
+          
+                  <div class="filter-container p-0 row">
+                    <div class="filtr-item col-sm-2" data-category="1" data-sort="white sample" >
+                      <div class="form-group clearfix">
+                        <div class="icheck-success">
+                          <input type="radio" name="r3" checked id="mark-banner1">
+                          <label for="mark-banner1"></label>
+                        </div>                       
+                      </div>
+                      <a href="/dist/img/banners/1.jpg" data-toggle="lightbox" data-title="Mostrando Banner  1" data-footer="" data-gallery="gallery">
+                        <img src="/dist/img/banners/1.jpg" class="img-fluid mb-2" alt="white sample"  title="white sample"/>                        
+                      </a>
+                      
+                    </div>
+                    <div class="filtr-item col-sm-2" data-category="2, 4" data-sort="black sample">
+                      <div class="form-group clearfix">
+                        <div class="icheck-success">
+                          <input type="radio" name="r3" checked id="mark-banner2">
+                          <label for="mark-banner2"></label>
+                        </div>                       
+                      </div>
+                      <a href="/dist/img/banners/2.jpg" data-toggle="lightbox" data-title="Mostrando Banner  2" data-gallery="gallery" data-footer="">
+                        <img src="/dist/img/banners/2.jpg" class="img-fluid mb-2" alt="black sample" title="black sample"/>
+                      </a>
+                    </div>
+                    <div class="filtr-item col-sm-2" data-category="3, 4" data-sort="red sample">
+                      <div class="form-group clearfix">
+                        <div class="icheck-success">
+                          <input type="radio" name="r3" checked id="mark-banner3">
+                          <label for="mark-banner3"></label>
+                        </div>                       
+                      </div>
+                      <a href="/dist/img/banners/1.jpg" data-toggle="lightbox" data-title="Mostrando Banner  3" data-gallery="gallery" data-footer="">
+                        <img src="/dist/img/banners/1.jpg" class="img-fluid mb-2" alt="red sample" title="red sample"/>
+                      </a>
+                    </div>
+                    <div class="filtr-item col-sm-2" data-category="3, 4" data-sort="red sample">
+                      <div class="form-group clearfix">
+                        <div class="icheck-success">
+                          <input type="radio" name="r3" checked id="mark-banner4">
+                          <label for="mark-banner4"></label>
+                        </div>                       
+                      </div>
+                      <a href="/dist/img/banners/2.jpg" data-toggle="lightbox" data-title="Mostrando Banner  4" data-gallery="gallery" data-footer="">
+                        <img src="/dist/img/banners/2.jpg" class="img-fluid mb-2" alt="red sample" title="red sample"/>
+                      </a>
+                    </div>
+                    <div class="filtr-item col-sm-2" data-category="2, 4" data-sort="black sample">
+                      <div class="form-group clearfix">
+                        <div class="icheck-success">
+                          <input type="radio" name="r3" checked id="mark-banner5">
+                          <label for="mark-banner5"></label>
+                        </div>                       
+                      </div>
+                      <a href="/dist/img/banners/1.jpg" data-toggle="lightbox" data-title="Mostrando Banner  5" data-gallery="gallery" data-footer="">
+                        <img src="/dist/img/banners/1.jpg" class="img-fluid mb-2" alt="black sample" title="black sample"/>
+                      </a>
+                    </div>
+                    <div class="filtr-item col-sm-2" data-category="1" data-sort="white sample6">
+                      <div class="form-group clearfix">
+                        <div class="icheck-success">
+                          <input type="radio" name="r3" checked id="mark-banner6">
+                          <label for="mark-banner6"></label>
+                        </div>                       
+                      </div>
+                      <a href="/dist/img/banners/2.jpg" data-toggle="lightbox" data-title="Mostrando Banner  6" data-gallery="gallery" data-footer="">
+                        <img src="/dist/img/banners/2.jpg" class="img-fluid mb-2" alt="white sample"  title="white sample"/>
+                      </a>
+                    </div>
+                    <div class="filtr-item col-sm-2" data-category="1" data-sort="white sample">
+                      <div class="form-group clearfix">
+                        <div class="icheck-success">
+                          <input type="radio" name="r3" checked id="mark-banner7">
+                          <label for="mark-banner7"></label>
+                        </div>                       
+                      </div>
+                      <a href="/dist/img/banners/1.jpg" data-toggle="lightbox" data-title="Mostrando Banner  7" data-gallery="gallery" data-footer="">
+                        <img src="/dist/img/banners/1.jpg" class="img-fluid mb-2" alt="white sample"  title="white sample"/>
+                      </a>
+                    </div>
+                    <div class="filtr-item col-sm-2" data-category="2, 4" data-sort="black sample">
+                      <div class="form-group clearfix">
+                        <div class="icheck-success">
+                          <input type="radio" name="r3" checked id="mark-banner8">
+                          <label for="mark-banner8"></label>
+                        </div>                       
+                      </div>
+                      <a href="/dist/img/banners/2.jpg" data-toggle="lightbox" data-title="Mostrando Banner  8" data-gallery="gallery" data-footer="">
+                        <img src="/dist/img/banners/2.jpg" class="img-fluid mb-2" alt="black sample" title="black sample"/>
+                      </a>
+                    </div>
+                    <div class="filtr-item col-sm-2" data-category="3, 4" data-sort="red sample">
+                      <div class="form-group clearfix">
+                        <div class="icheck-success">
+                          <input type="radio" name="r3" checked id="mark-banner9">
+                          <label for="mark-banner9"></label>
+                        </div>                       
+                      </div>
+                      <a href="/dist/img/banners/1.jpg" data-toggle="lightbox" data-title="Mostrando Banner  9" data-gallery="gallery" data-footer="">
+                        <img src="/dist/img/banners/1.jpg" class="img-fluid mb-2" alt="red sample" title="red sample"/>
+                      </a>
+                    </div>
+                    <div class="filtr-item col-sm-2" data-category="1" data-sort="white sample">
+                      <div class="form-group clearfix">
+                        <div class="icheck-success">
+                          <input type="radio" name="r3" checked id="mark-banner10">
+                          <label for="mark-banner10"></label>
+                        </div>                       
+                      </div>
+                      <a href="/dist/img/banners/2.jpg" data-toggle="lightbox" data-title="Mostrando Banner  10" data-gallery="gallery" data-footer="">
+                        <img src="/dist/img/banners/2.jpg" class="img-fluid mb-2" alt="white sample"  title="white sample"/>
+                      </a>
+                    </div>
+                    <div class="filtr-item col-sm-2" data-category="1" data-sort="white sample">
+                      <div class="form-group clearfix">
+                        <div class="icheck-success">
+                          <input type="radio" name="r3" checked id="mark-banner11">
+                          <label for="mark-banner11"></label>
+                        </div>                       
+                      </div>
+                      <a href="/dist/img/banners/1.jpg" data-toggle="lightbox" data-title="Mostrando Banner  11" data-gallery="gallery" data-footer="">
+                        <img src="/dist/img/banners/1.jpg" class="img-fluid mb-2" alt="white sample"  title="white sample"/>
+                      </a>
+                    </div>
+                    <div class="filtr-item col-sm-2" data-category="2, 4" data-sort="black sample">
+                      <div class="form-group clearfix">
+                        <div class="icheck-success">
+                          <input type="radio" name="r3" checked id="mark-banner12">
+                          <label for="mark-banner12"></label>
+                        </div>                       
+                      </div>
+                      <a href="/dist/img/banners/2.jpg" data-toggle="lightbox" data-title="Mostrando Banner  12" data-gallery="gallery" data-footer="">
+                        <img src="/dist/img/banners/2.jpg" class="img-fluid mb-2" alt="black sample" title="black sample"/>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              </div>
+            </div>
+          </div>
+          
+        </div>
+      </div><!-- /.container-fluid -->
+    </section>
+    <!-- /.content -->
+  </div>
+  <!-- /.content-wrapper -->
+  <div class="modal fade" id="modal-add">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4 class="modal-title">Adicionando...</h4>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+                 <!-- general form elements -->
+                 <div class="card card-success">
+                  <div class="card-header">
+                    
+                  </div>
+                  <!-- /.card-header -->
+                  <!-- form start -->
+                  <form role="form">
+                    <div class="card-body">
+                      <div class="form-group">
+                        <label for="enlace-add">Enlace</label>
+                        <input type="text" class="form-control" placeholder="Enlace a donde apunta el banner" id="enlace-add">
+                      </div>
+                      <div class="form-group">
+                        <label for="textoCompleto-add">Texto alternativo</label>
+                        <textarea id="textoCompleto-add" name="textoCompleto" class="textarea" placeholder="Teclear texto completo"
+                              style="width: 100%; height: 200px; font-size: 14px; line-height: 18px; border: 1px solid #dddddd; padding: 10px;">
+
+                            </textarea>
+                      </div>
+                      <div class="form-group">
+                        <label for="imagenBannerG-add">Imagen grande</label>
+                        <div class="input-group">
+                          <div class="custom-file">
+                            <input type="file" class="custom-file-input" id="imagenBannerG-add">
+                            <label class="custom-file-label" for="imagenBannerG-add">Seleccionar imagen</label>
+                          </div>
+                          <div class="input-group-append">
+                            <span class="input-group-text" id="">Upload</span>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="form-group">
+                        <label for="imagenBannerR1-add">Imagen responsive tamaño 1</label>
+                        <div class="input-group">
+                          <div class="custom-file">
+                            <input type="file" class="custom-file-input" id="imagenBannerR1-add">
+                            <label class="custom-file-label" for="imagenBannerR1-add">Seleccionar imagen</label>
+                          </div>
+                          <div class="input-group-append">
+                            <span class="input-group-text" id="">Upload</span>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="form-group">
+                        <label for="imagenBannerR2-add">Imagen responsive tamaño 2</label>
+                        <div class="input-group">
+                          <div class="custom-file">
+                            <input type="file" class="custom-file-input" id="imagenBannerR2-add">
+                            <label class="custom-file-label" for="imagenBannerR2-add">Seleccionar imagen</label>
+                          </div>
+                          <div class="input-group-append">
+                            <span class="input-group-text" id="">Upload</span>
+                          </div>
+                        </div>
+                      </div>
+                     
+                    </div>
+                    <!-- /.card-body -->
+                  </form>
+                </div>
+                <!-- /.card -->
+        </div>
+        <div class="modal-footer justify-content-between">
+          <button type="button" class="btn btn-danger" data-dismiss="modal">Cerrar</button>
+          <button type="button" class="btn btn-success">Guardar</button>
+        </div>
+      </div>
+      <!-- /.modal-content -->
+    </div>
+    <!-- /.modal-dialog -->
+  </div>
+  <!-- /.modal -->
+  <div class="modal fade" id="modal-edit">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4 class="modal-title">Editando...</h4>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+                 <!-- general form elements -->
+                 <div class="card card-success">
+                  <div class="card-header">
+                    <h3 class="card-title">IDBanner:1</h3>
+                  </div>
+                  <!-- /.card-header -->
+                  <!-- form start -->
+                  <form role="form">
+                    <div class="card-body">
+                      <div class="form-group">
+                        <label for="enlace-edit">Enlace</label>
+                        <input type="text" class="form-control" placeholder="Enlace a donde apunta el banner" id="enlace-edit">
+                      </div>
+                      <div class="form-group">
+                        <label for="textoCompleto-edit">Texto alternativo</label>
+                        <textarea id="textoCompleto-edit" name="textoCompleto" class="textarea" placeholder="Teclear texto completo"
+                              style="width: 100%; height: 200px; font-size: 14px; line-height: 18px; border: 1px solid #dddddd; padding: 10px;"> No dejes que el azar te sorprenda, tu seguridad está al alcance de tus manos
+
+                            </textarea>
+                      </div>
+                      <div class="form-group">
+                        <label for="imagenBannerG-edit">Imagen grande</label>
+                        <div class="input-group">
+                          <div class="custom-file">
+                            <input type="file" class="custom-file-input" id="imagenBannerG-edit">
+                            <label class="custom-file-label" for="imagenBannerG-edit">Seleccionar imagen</label>
+                          </div>
+                          <div class="input-group-append">
+                            <span class="input-group-text" id="">Upload</span>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="form-group">
+                        <label for="imagenBannerR1-edit">Imagen responsive tamaño 1</label>
+                        <div class="input-group">
+                          <div class="custom-file">
+                            <input type="file" class="custom-file-input" id="imagenBannerR1-edit">
+                            <label class="custom-file-label" for="imagenBannerR1-edit">Seleccionar imagen</label>
+                          </div>
+                          <div class="input-group-append">
+                            <span class="input-group-text" id="">Upload</span>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="form-group">
+                        <label for="imagenBannerR2-edit">Imagen responsive tamaño 2</label>
+                        <div class="input-group">
+                          <div class="custom-file">
+                            <input type="file" class="custom-file-input" id="imagenBannerR2-edit">
+                            <label class="custom-file-label" for="imagenBannerR2-edit">Seleccionar imagen</label>
+                          </div>
+                          <div class="input-group-append">
+                            <span class="input-group-text" id="">Upload</span>
+                          </div>
+                        </div>
+                      </div>
+                     
+                    </div>
+                    <!-- /.card-body -->
+                  </form>
+                </div>
+                <!-- /.card -->
+        </div>
+        <div class="modal-footer justify-content-between">
+          <button type="button" class="btn btn-danger" data-dismiss="modal">Cerrar</button>
+          <button type="button" class="btn btn-success">Guardar</button>
+        </div>
+      </div>
+      <!-- /.modal-content -->
+    </div>
+    <!-- /.modal-dialog -->
+  </div>
+  <!-- /.modal -->
+   <!-- /.content-wrapper -->
+   <div class="modal fade" id="modal-delete">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-body">
+          <p> Esta seguro que desea eliminar el banner??</p>
+        </div>
+        <div class="modal-footer justify-content-between">
+          <button type="button" class="btn btn-danger" data-dismiss="modal">Cancelar</button>
+          <button type="button" class="btn btn-success">Eliminar</button>
+        </div>
+      </div>
+      <!-- /.modal-content -->
+    </div>
+    <!-- /.modal-dialog -->
+  </div>
+  <!-- /.modal -->
+
+  <footer class="main-footer">
+    <strong>Copyright &copy; 2020 ESEN Development Team</a>.</strong>
+    All rights reserved.
+    <div class="float-right d-none d-sm-inline-block">
+      <b>Version</b> 1.0.0
+    </div>
+  </footer>
+
+  <!-- Control Sidebar -->
+  <aside class="control-sidebar control-sidebar-dark">
+    <!-- Control sidebar content goes here -->
+  </aside>
+  <!-- /.control-sidebar -->
+</div>
+<!-- ./wrapper -->
+
+<!-- jQuery -->
+<script src="../plugins/jquery/jquery.min.js"></script>
+<!-- Bootstrap -->
+<script src="../plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+<!-- jQuery UI -->
+<script src="../plugins/jquery-ui/jquery-ui.min.js"></script>
+<!-- Ekko Lightbox -->
+<script src="../plugins/ekko-lightbox/ekko-lightbox.min.js"></script>
+<!-- InputMask -->
+<script src="../../plugins/moment/moment.min.js"></script>
+<script src="../../plugins/inputmask/min/jquery.inputmask.bundle.min.js"></script>
+<!-- Tempusdominus Bootstrap 4 -->
+<script src="../../plugins/tempusdominus-bootstrap-4/js/tempusdominus-bootstrap-4.min.js"></script>
+<!-- Bootstrap Switch -->
+<script src="../../plugins/bootstrap-switch/js/bootstrap-switch.min.js"></script>
+<!-- AdminLTE App -->
+<script src="../dist/js/adminlte.min.js"></script>
+<!-- AdminLTE for demo purposes -->
+<script src="../dist/js/demo.js"></script>
+<script src="../../plugins/summernote/summernote-bs4.min.js"></script>
+<!-- Filterizr-->
+<script src="../plugins/filterizr/jquery.filterizr.min.js"></script>
+<!-- Page specific script -->
+<script>
+  $(function () {
+    $(document).on('click', '[data-toggle="lightbox"]', function(event) {
+      event.preventDefault();
+      $(this).ekkoLightbox({
+        alwaysShowClose: true
+      });
+    });
+
+    $('.filter-container').filterizr({gutterPixels: 3});
+    $('.btn[data-filter]').on('click', function() {
+      $('.btn[data-filter]').removeClass('active');
+      $(this).addClass('active');
+    });
+    $("input[data-bootstrap-switch]").each(function(){
+      $(this).bootstrapSwitch('state', $(this).prop('checked'));
+    });
+     // Summernote
+     $('.textarea').summernote()
+  })
+</script>
+</body>
+</html>

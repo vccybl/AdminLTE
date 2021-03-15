@@ -9,8 +9,8 @@
 
   <!-- Font Awesome -->
   <link rel="stylesheet" href="../../plugins/fontawesome-free/css/all.min.css">
-  <!-- Ionicons -->
-  <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+  <!-- Ionicons 
+  <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">-->
   <!-- DataTables -->
   <link rel="stylesheet" href="../../plugins/datatables-bs4/css/dataTables.bootstrap4.css">
   <!-- iCheck for checkboxes and radio inputs -->
@@ -24,8 +24,8 @@
   <link rel="stylesheet" href="../../plugins/bootstrap4-duallistbox/bootstrap-duallistbox.min.css">
  <!-- Theme style -->
   <link rel="stylesheet" href="../../dist/css/adminlte.min.css">
-  <!-- Google Font: Source Sans Pro -->
-  <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
+  <!-- Google Font: Source Sans Pro 
+  <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">-->
   <script src="/dist/js/general.js"></script>
   <script src="../node_modules/axios/dist/axios.min.js"></script>
   <link rel="icon" href="/dist/img/logo1.png" type="image/png" />
@@ -33,18 +33,10 @@
 </head>
 <body class="hold-transition sidebar-mini">
 <div class="wrapper">
-  <!-- Navbar -->
-  <nav class="main-header navbar navbar-expand navbar-white navbar-light">
+   <!-- Navbar -->
+   <nav class="main-header navbar navbar-expand navbar-dark navbar-success">
     <!-- Left navbar links -->
-    <ul class="navbar-nav">
-      <li class="nav-item">
-        <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
-      </li>
-      <li class="nav-item d-none d-sm-inline-block">
-        <a href="/" class="nav-link">Inicio</a>
-      </li>
-     
-    </ul>  
+    <div id="MainBarMenu"></div>
   </nav>
   <!-- /.navbar -->
   <aside class="main-sidebar elevation-4 sidebar-light-success">
@@ -148,6 +140,7 @@
     <div class="modal fade" id="modal-add">
       <div class="modal-dialog modal-md">
         <div class="modal-content">
+          <form role="form" id="AddUserForm" name="AddUserForm" method="POST">
           <div class="modal-header">
             <h4 class="modal-title">Adicionando usuario...</h4>
             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
@@ -157,49 +150,40 @@
           <div class="modal-body">
             <div class="row">
               <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
-                <div class="mb-3">
-                  <div class="input-group mb-3">
-                    <div class="input-group-prepend">
-                      <span class="input-group-text"><i class="fas fa-user"></i></span>
+                <div class="input-group mb-3">
+                  <input type="text" class="form-control" placeholder="Nombre de usuario" id="loginADD" name="loginADD">
+                  <div class="input-group-append">
+                    <div class="input-group-text">
+                      <span class="fas fa-user"></span>
                     </div>
-                    <input type="text" class="form-control" placeholder="Nombre">
                   </div>
-                  
-                 <div class="input-group mb-3">
-                  <div class="input-group-prepend">
-                    <span class="input-group-text"><i class="fas fa-users"></i></span>
-                  </div>
-                  <input type="text" class="form-control" placeholder="Apellidos">
                 </div>
+                
                 <div class="input-group mb-3">
-                  <div class="input-group-prepend">
-                    <span class="input-group-text"><i class="fas fa-user-lock"></i></span>
-                  </div>
-                  <input type="text" class="form-control" placeholder="Login">
-                </div>
-                <div class="input-group mb-3">
-                  <div class="input-group-prepend">
-                    <span class="input-group-text"><i class="fas fa-envelope"></i></span>
-                  </div>
-                  <input type="email" class="form-control" placeholder="Email">
-                </div>
-            
-                <div class="input-group mb-3">
-                 Estado: &nbsp;  <div class="custom-control custom-switch custom-switch-off-danger custom-switch-on-success">
-                      <input type="checkbox" class="custom-control-input" id="customSwitchM1" checked>
-                      <label class="custom-control-label" for="customSwitchM1"></label>
+                  <input type="password" class="form-control" placeholder="Contraseña" id="clave1" name="clave1">
+                  <div class="input-group-append">
+                    <div class="input-group-text">
+                      <span class="fas fa-lock"></span>
                     </div>
-                 </div>                
-
-              
+                  </div>
+                </div>
+                <div class="input-group mb-3">
+                  <input type="password" class="form-control" placeholder="Confirme la contraseña" id="clave2" name="clave2">
+                  <div class="input-group-append">
+                    <div class="input-group-text">
+                      <span class="fas fa-lock"></span>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
           <div class="modal-footer justify-content-between">
-            <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
-            <button type="button" class="btn btn-success">Guardar</button>
+            <button type="submit" class="btn btn-success">Guardar</button>
+            <button type="button" class="btn btn-danger" data-dismiss="modal">Cerrar</button>
+            
           </div>
-        </div>
+        </form></div>
 
         <!-- /.modal-content -->
       </div>
@@ -207,6 +191,64 @@
     </div>
     </div>
     <!-- /.modal -->
+
+       <!-- /.content-wrapper -->
+       <div class="modal fade" id="modal-pwd">
+        <div class="modal-dialog modal-md">
+          <div class="modal-content">
+            <form role="form" id="UpdatePwdForm" name="UpdatePwdForm" method="POST">
+            <div class="modal-header">
+              <h4 id="usuarioPWD" class="modal-title">Actualizar contraseña </h4>
+              <input type="hidden" id="UserIDToPWD" name="UserIDToPWD">
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <div class="row">
+                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
+                  <div class="input-group mb-3">
+                    <input type="password" class="form-control" placeholder="Contraseña anterior" id="pwd1" name="pwd1">
+                    <div class="input-group-append">
+                      <div class="input-group-text">
+                        <span class="fas fa-lock"></span>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="input-group mb-3">
+                    <input type="password" class="form-control" placeholder="Nueva contraseña" id="pwd2" name="pwd2">
+                    <div class="input-group-append">
+                      <div class="input-group-text">
+                        <span class="fas fa-lock"></span>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="input-group mb-3">
+                    <input type="password" class="form-control" placeholder="Confirme la nueva contraseña" id="pwd3" name="pwd3">
+                    <div class="input-group-append">
+                      <div class="input-group-text">
+                        <span class="fas fa-lock"></span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="modal-footer justify-content-between">
+              <button type="submit" class="btn btn-success">Guardar</button>
+              <button type="button" class="btn btn-danger" data-dismiss="modal">Cerrar</button>
+              
+            </div>
+          </form></div>
+  
+          <!-- /.modal-content -->
+        </div>
+        <!-- /.modal-dialog -->
+      </div>
+      </div>
+      <!-- /.modal -->
+
+
       <!-- /.content-wrapper -->
       <div class="modal fade" id="modal-edit">
         <div class="modal-dialog">
@@ -225,30 +267,30 @@
                     <div class="input-group-prepend">
                       <span class="input-group-text">Nombre de usuario:</span>
                     </div>
-                    <input type="text" class="form-control" placeholder="Login" value="erick">
+                    <input type="text" class="form-control" placeholder="Login" value="erick" id="loginM">
                   </div>
                   <div class="input-group mb-3">
                     Estado: &nbsp;  <div class="custom-control custom-switch custom-switch-off-danger custom-switch-on-success">
-                         <input type="checkbox" class="custom-control-input" id="customSwitchMEnable" checked>
+                         <input type="checkbox" class="custom-control-input" id="customSwitchMEnable" name="customSwitchMEnable">
                          <label class="custom-control-label" for="customSwitchMEnable"></label>
                        </div>
                     </div>  
                   <div class="input-group mb-3">
                     Bloqueado: &nbsp;  <div class="custom-control custom-switch custom-switch-off-danger custom-switch-on-success">
-                         <input type="checkbox" class="custom-control-input" id="customSwitchMLocked" checked>
+                         <input type="checkbox" class="custom-control-input" id="customSwitchMLocked" name="customSwitchMLocked">
                          <label class="custom-control-label" for="customSwitchMLocked"></label>
                        </div>
                     </div>   
                                
                    <div class="input-group mb-3">
                     Expira clave: &nbsp;  <div class="custom-control custom-switch custom-switch-off-danger custom-switch-on-success">
-                         <input type="checkbox" class="custom-control-input" id="customSwitchMExpired" checked>
+                         <input type="checkbox" class="custom-control-input" id="customSwitchMExpired" id="customSwitchMExpired">
                          <label class="custom-control-label" for="customSwitchMExpired"></label>
                        </div>
                     </div>  
                     <div class="input-group mb-3">
                       Borrable: &nbsp;  <div class="custom-control custom-switch custom-switch-off-danger custom-switch-on-success">
-                           <input type="checkbox" class="custom-control-input" id="customSwitchMErasable" checked>
+                           <input type="checkbox" class="custom-control-input" id="customSwitchMErasable" name="customSwitchMErasable">
                            <label class="custom-control-label" for="customSwitchMErasable"></label>
                          </div>
                       </div>   
@@ -271,13 +313,13 @@
                   <td class="text-center">                    
                        <div class="form-group clearfix">
                     <div class="icheck-success d-inline">
-                      <input type="radio" name="ru" checked id="radioDangerU1">
-                      <label for="radioDangerU1">
+                      <input type="radio" name="ru" id="S-USUARIOS">
+                      <label for="S-USUARIOS">
                       </label>
                     </div>
                     <div class="icheck-danger d-inline">
-                      <input type="radio" name="ru" id="radioDangerU2">
-                      <label for="radioDangerU2">
+                      <input type="radio" name="ru" id="D-USUARIOS">
+                      <label for="D-USUARIOS">
                       </label>
                     </div>                   
                   </div></td>  
@@ -289,13 +331,13 @@
                     <td class="text-center">                   
                          <div class="form-group clearfix">
                       <div class="icheck-success d-inline">
-                        <input type="radio" name="rt" checked id="radioDangerT1">
-                        <label for="radioDangerT1">
+                        <input type="radio" name="rt" checked id="S-TEXTOS_FIJOS">
+                        <label for="S-TEXTOS_FIJOS">
                         </label>
                       </div>
                       <div class="icheck-danger d-inline">
-                        <input type="radio" name="rt" id="radioDangerT2">
-                        <label for="radioDangerT2">
+                        <input type="radio" name="rt" id="D-TEXTOS_FIJOS">
+                        <label for="D-TEXTOS_FIJOS">
                         </label>
                       </div>                   
                     </div></td>  
@@ -307,13 +349,13 @@
                     <td class="text-center">                   
                          <div class="form-group clearfix">
                       <div class="icheck-success d-inline">
-                        <input type="radio" name="rf" checked id="radioDangerF1">
-                        <label for="radioDangerF1">
+                        <input type="radio" name="rf"  id="S-PREGUNTAS_FRECUENTES">
+                        <label for="S-PREGUNTAS_FRECUENTES">
                         </label>
                       </div>
                       <div class="icheck-danger d-inline">
-                        <input type="radio" name="rf" id="radioDangerF2">
-                        <label for="radioDangerF2">
+                        <input type="radio" name="rf" id="D-PREGUNTAS_FRECUENTES">
+                        <label for="D-PREGUNTAS_FRECUENTES">
                         </label>
                       </div>                   
                     </div></td>  
@@ -325,13 +367,13 @@
                     <td class="text-center">                   
                          <div class="form-group clearfix">
                       <div class="icheck-success d-inline">
-                        <input type="radio" name="rb" checked id="radioDangerB1" >
-                        <label for="radioDangerB1">
+                        <input type="radio" name="rb"  id="S-BANNERS" >
+                        <label for="S-BANNERS">
                         </label>
                       </div>
                       <div class="icheck-danger d-inline">
-                        <input type="radio" name="rb" id="radioDangerB2">
-                        <label for="radioDangerB2">
+                        <input type="radio" name="rb" id="D-BANNERS">
+                        <label for="D-BANNERS">
                         </label>
                       </div>                   
                     </div></td>  
@@ -342,13 +384,13 @@
                   <td class="text-center">                   
                        <div class="form-group clearfix">
                     <div class="icheck-success d-inline">
-                      <input type="radio" name="rn" checked id="radioDangerN1" >
-                      <label for="radioDangerN1">
+                      <input type="radio" name="rn" id="S-NOTICIAS" >
+                      <label for="S-NOTICIAS">
                       </label>
                     </div>
                     <div class="icheck-danger d-inline">
-                      <input type="radio" name="rn" id="radioDangerN2">
-                      <label for="radioDangerN2">
+                      <input type="radio" name="rn" id="D-NOTICIAS">
+                      <label for="D-NOTICIAS">
                       </label>
                     </div>                   
                   </div></td>  
@@ -361,13 +403,13 @@
                     <td class="text-center">                   
                          <div class="form-group clearfix">
                       <div class="icheck-success d-inline">
-                        <input type="radio" name="ro" checked id="radioDangerO1" >
-                        <label for="radioDangerO1">
+                        <input type="radio" name="ro" checked id="S-DIRECTORIO" >
+                        <label for="S-DIRECTORIO">
                         </label>
                       </div>
                       <div class="icheck-danger d-inline">
-                        <input type="radio" name="ro" id="radioDangerO2">
-                        <label for="radioDangerO2">
+                        <input type="radio" name="ro" id="D-DIRECTORIO">
+                        <label for="D-DIRECTORIO">
                         </label>
                       </div>                   
                     </div></td>  
@@ -379,13 +421,13 @@
                     <td class="text-center">                   
                          <div class="form-group clearfix">
                       <div class="icheck-success d-inline">
-                        <input type="radio" name="rp" checked id="radioDangerP1" >
-                        <label for="radioDangerP1">
+                        <input type="radio" name="rp" checked id="S-PROCESOS" >
+                        <label for="S-PROCESOS">
                         </label>
                       </div>
                       <div class="icheck-danger d-inline">
-                        <input type="radio" name="rp" id="radioDangerP2">
-                        <label for="radioDangerP2">
+                        <input type="radio" name="rp" id="D-PROCESOS">
+                        <label for="D-PROCESOS">
                         </label>
                       </div>                   
                     </div></td>  
@@ -397,13 +439,31 @@
                     <td class="text-center">                   
                          <div class="form-group clearfix">
                       <div class="icheck-success d-inline">
-                        <input type="radio" name="rs" checked id="radioDangerS1" >
-                        <label for="radioDangerS1">
+                        <input type="radio" name="rs" id="S-SEGUROS" >
+                        <label for="S-SEGUROS">
                         </label>
                       </div>
                       <div class="icheck-danger d-inline">
-                        <input type="radio" name="rs" id="radioDangerS2">
-                        <label for="radioDangerS2">
+                        <input type="radio" name="rs" id="D-SEGUROS">
+                        <label for="D-SEGUROS">
+                        </label>
+                      </div>                   
+                    </div></td>  
+                  </tr>
+                  <tr>
+                    <td >
+                      SOCIO COMERCIAL
+                      </td>
+                    <td class="text-center">                   
+                         <div class="form-group clearfix">
+                      <div class="icheck-success d-inline">
+                        <input type="radio" name="rsc" id="S-SOCIOCOMERCIAL" >
+                        <label for="S-SOCIOCOMERCIAL">
+                        </label>
+                      </div>
+                      <div class="icheck-danger d-inline">
+                        <input type="radio" name="rsc" id="D-SOCIOCOMERCIAL">
+                        <label for="D-SOCIOCOMERCIAL">
                         </label>
                       </div>                   
                     </div></td>  
@@ -413,8 +473,9 @@
               </table>
             </div>
             <div class="modal-footer justify-content-between">
-              <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
+             
               <button type="button" class="btn btn-success">Guardar</button>
+              <button type="button" class="btn btn-danger" data-dismiss="modal">Cerrar</button>
             </div>
            </div>
   
@@ -425,205 +486,51 @@
       </div>
       <!-- /.modal -->
  <!-- /.content-wrapper -->
- <div class="modal fade" id="modal-access">
-    <div class="modal-dialog ">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h4 class="modal-title">Permisos...</h4>
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-          </button>
-        </div>
-        <div class="modal-body">
-            <table id="permisos-table" class="table table-sm table-bordered table-striped table-hover table-responsive-xl table-responsive-lg table-responsive-md table-responsive-sm">
-                <thead>
-                <tr>
-                  <th>Módulo</th>
-                  <th class="text-center">Modificar / Visualizar</th>
-                  
-                  </tr>
-                </thead>
-                <tbody>               
-                <tr>
-                  <td >
-                    Usuarios
-                    </td>
-                  <td class="text-center">                    
-                       <div class="form-group clearfix">
-                    <div class="icheck-success d-inline">
-                      <input type="radio" name="ru" checked id="radioDangerU1">
-                      <label for="radioDangerU1">
-                      </label>
-                    </div>
-                    <div class="icheck-info d-inline">
-                      <input type="radio" name="ru" id="radioDangerU2">
-                      <label for="radioDangerU2">
-                      </label>
-                    </div>                   
-                  </div></td>  
-                </tr>
-                <tr>
-                    <td >
-                      Textos fijos
-                      </td>
-                    <td class="text-center">                   
-                         <div class="form-group clearfix">
-                      <div class="icheck-success d-inline">
-                        <input type="radio" name="rt" checked id="radioDangerT1">
-                        <label for="radioDangerT1">
-                        </label>
-                      </div>
-                      <div class="icheck-info d-inline">
-                        <input type="radio" name="rt" id="radioDangerT2">
-                        <label for="radioDangerT2">
-                        </label>
-                      </div>                   
-                    </div></td>  
-                  </tr>
-                  <tr>
-                    <td >
-                      Preguntas frecuentes
-                      </td>
-                    <td class="text-center">                   
-                         <div class="form-group clearfix">
-                      <div class="icheck-success d-inline">
-                        <input type="radio" name="rf" checked id="radioDangerF1">
-                        <label for="radioDangerF1">
-                        </label>
-                      </div>
-                      <div class="icheck-info d-inline">
-                        <input type="radio" name="rf" id="radioDangerF2">
-                        <label for="radioDangerF2">
-                        </label>
-                      </div>                   
-                    </div></td>  
-                  </tr>
-                  <tr>
-                    <td >
-                      Banners
-                      </td>
-                    <td class="text-center">                   
-                         <div class="form-group clearfix">
-                      <div class="icheck-success d-inline">
-                        <input type="radio" name="rb" checked id="radioDangerB1" >
-                        <label for="radioDangerB1">
-                        </label>
-                      </div>
-                      <div class="icheck-info d-inline">
-                        <input type="radio" name="rb" id="radioDangerB2">
-                        <label for="radioDangerB2">
-                        </label>
-                      </div>                   
-                    </div></td>  
-                     <tr>
-                  <td >
-                    Noticias
-                    </td>
-                  <td class="text-center">                   
-                       <div class="form-group clearfix">
-                    <div class="icheck-success d-inline">
-                      <input type="radio" name="rn" checked id="radioDangerN1" >
-                      <label for="radioDangerN1">
-                      </label>
-                    </div>
-                    <div class="icheck-info d-inline">
-                      <input type="radio" name="rn" id="radioDangerN2">
-                      <label for="radioDangerN2">
-                      </label>
-                    </div>                   
-                  </div></td>  
-                </tr>
-                  </tr>
-                  <tr>
-                    <td >
-                      Directorio
-                      </td>
-                    <td class="text-center">                   
-                         <div class="form-group clearfix">
-                      <div class="icheck-success d-inline">
-                        <input type="radio" name="ro" checked id="radioDangerO1" >
-                        <label for="radioDangerO1">
-                        </label>
-                      </div>
-                      <div class="icheck-info d-inline">
-                        <input type="radio" name="ro" id="radioDangerO2">
-                        <label for="radioDangerO2">
-                        </label>
-                      </div>                   
-                    </div></td>  
-                  </tr>
-                  <tr>
-                    <td >
-                      Procesos
-                      </td>
-                    <td class="text-center">                   
-                         <div class="form-group clearfix">
-                      <div class="icheck-success d-inline">
-                        <input type="radio" name="rp" checked id="radioDangerP1" >
-                        <label for="radioDangerP1">
-                        </label>
-                      </div>
-                      <div class="icheck-info d-inline">
-                        <input type="radio" name="rp" id="radioDangerP2">
-                        <label for="radioDangerP2">
-                        </label>
-                      </div>                   
-                    </div></td>  
-                  </tr>
-                  <tr>
-                    <td >
-                      Seguros
-                      </td>
-                    <td class="text-center">                   
-                         <div class="form-group clearfix">
-                      <div class="icheck-success d-inline">
-                        <input type="radio" name="rs" checked id="radioDangerS1" >
-                        <label for="radioDangerS1">
-                        </label>
-                      </div>
-                      <div class="icheck-info d-inline">
-                        <input type="radio" name="rs" id="radioDangerS2">
-                        <label for="radioDangerS2">
-                        </label>
-                      </div>                   
-                    </div></td>  
-                  </tr>
-                </tbody>
-                
-              </table>
-        </div>
-        <div class="modal-footer justify-content-between">
-          <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
-          <button type="button" class="btn btn-success">Guardar</button>
-        </div>
-      </div>
 
-      <!-- /.modal-content -->
-    </div>
-    <!-- /.modal-dialog -->
-  </div>
-  </div>
   <!-- /.modal -->   
      <!-- /.content-wrapper -->
      <div class="modal fade" id="modal-delete">
         <div class="modal-dialog">
           <div class="modal-content">
-            
-            <div class="modal-body"><div class="col-md-12 text-center"> <p> ¿Esta seguro que desea eliminar el usuario?</p></div>
+            <form role="form" id="DelUserForm" name="DelUserForm" method="POST">
+            <div class="modal-body"><div class="col-md-12 text-center"> <p> ¿Esta seguro que desea eliminar el usuario?</p>
+            <p id="usuario"></p>
+            <input type="hidden" id="UserIDToDel" name="UserIDToDel">
+            </div>
             </div>
             <div class="modal-footer justify-content-between">
+              <button type="submit" class="btn btn-danger">Eliminar</button>
               <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
-              <button type="button" class="btn btn-danger">Eliminar</button>
+              
             </div>
-          </div>
+          </form>
+          </div>       
           <!-- /.modal-content -->
         </div>
         <!-- /.modal-dialog -->
       </div>
       <!-- /.modal -->
+
+         <!-- /.content-wrapper -->
+     <div class="modal fade" id="modal-info">
+      <div class="modal-dialog">
+        <div class="modal-content">          
+          <div class="modal-body"><div class="col-md-12 text-center" id="info"></p>         
+          </div>
+          </div>
+        </div>       
+        <!-- /.modal-content -->
+      </div>
+      <!-- /.modal-dialog -->
+    </div>
+    <!-- /.modal -->
     
 <!-- jQuery -->
 <script src="../../plugins/jquery/jquery.min.js"></script>
+<!-- jquery-validation -->
+<script src="../../plugins/jquery-validation/jquery.validate.min.js"></script>
+<script src="../../plugins/jquery-validation/additional-methods.min.js"></script>
+<script src="../../plugins/jquery-validation/localization/messages_es.min.js"></script>
 <!-- Bootstrap 4 -->
 <script src="../../plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
 <!-- DataTables -->
@@ -644,17 +551,148 @@
 <script  src="../../dist/js/user.js"></script>
 <!-- page script -->
 <script>
-
 $(function(){
   $("#Menu").load("/pages/menu.html"); 
 });
-//Money Euro
-    $('[data-mask]').inputmask()
-
-$("input[data-bootstrap-switch]").each(function(){
-      $(this).bootstrapSwitch('state', $(this).prop('checked'));
+  
+   
+$(document).ready(function() {
+    $.validator.setDefaults({
+      debug: true,
+      submitHandler: function () {
+        //alert( "Form successful submitted!" );
+      }
     });
+    $.validator.addMethod("strongPassword", function(value, element){
+            return this.optional(element)
+            || value.length >= 8
+            && value.match(/[A-Z]/) 
+            && value.match(/[0-9]/) 
+            && value.match(/\W/);
+    }, 
+    "La clave debe tener al menos 8 caracteres, al menos una mayúscula, un número y un caracter especial")
+    $('#AddUserForm').validate({
+      rules: {
+        loginADD: {
+          required: true,
+          minlength: 5
+        },
+        clave1: {
+          required: true,
+          minlength: 8,
+          strongPassword: true
+        },
+        clave2: {
+          required: true,
+          minlength: 8,
+          equalTo: "#clave1"
+        }
+      },
+      messages: {
+        loginADD: {
+          required: "Introduzca el login",
+          minlength: "El login debe tener al menos {0} caracteres"
+        },
+        clave1: {
+          required: "Introduzca la clave",
+          minlength: "La clave debe tener al menos {0} caracteres"
+          
+        },
+        clave2: {
+          required: "Confirme la clave",
+          equalTo: "La clave no coincide",
+          minlength: "La clave debe tener al menos {0} caracteres"
+        }
+      },
+      errorElement: 'span',
+      errorPlacement: function (error, element) {
+        error.addClass('invalid-feedback');
+        element.closest('.input-group').append(error);
+      },
+      highlight: function (element, errorClass, validClass) {
+        $(element).addClass('is-invalid');
+      },
+      unhighlight: function (element, errorClass, validClass) {
+        $(element).removeClass('is-invalid');
+      }
+    });
+    $('#UpdatePwdForm').validate({
+      rules: {
+        clave1: {
+          required: true,
+          minlength: 8
+        },
+        clave1: {
+          required: true,
+          minlength: 8,
+          strongPassword: true
+        },
+        clave3: {
+          required: true,
+          minlength: 8,
+          equalTo: "#clave2"
+        }
+      },
+      messages: {
+        clave1: {
+          required: "Introduzca correctamente la clave anterior",
+          minlength: "La clave debe tener al menos {0} caracteres"
+          
+        },
+        clave2: {
+          required: "Introduzca la clave",
+          minlength: "La clave debe tener al menos {0} caracteres"
+          
+        },
+        clave3: {
+          required: "Confirme la clave",
+          equalTo: "La clave no coincide",
+          minlength: "La clave debe tener al menos {0} caracteres"
+        }
+      },
+      errorElement: 'span',
+      errorPlacement: function (error, element) {
+        error.addClass('invalid-feedback');
+        element.closest('.input-group').append(error);
+      },
+      highlight: function (element, errorClass, validClass) {
+        $(element).addClass('is-invalid');
+      },
+      unhighlight: function (element, errorClass, validClass) {
+        $(element).removeClass('is-invalid');
+      }
+    });
+  });
  
+$("#AddUserForm").submit(function(event) {
+  event.preventDefault();
+  const insertnow = async () => {
+                insertuser();
+        };  
+        var ejecutado=insertnow();
+        console.log(ejecutado)
+    
+});
+
+$("#DelUserForm").submit(function(event) {
+  event.preventDefault();
+  const delnow = async () => {
+          deletetuser();
+        };  
+        var ejecutadoDEL=delnow();
+        console.log(ejecutadoDEL)
+    
+});
+
+$("#UpdatePwdForm").submit(function(event) {
+  event.preventDefault();
+  const pwdnow = async () => {
+         pwduser();
+        };  
+        var ejecutadoPWD=pwdnow();
+        console.log(ejecutadoPWD)
+    
+});
 </script>
 </body>
 </html>

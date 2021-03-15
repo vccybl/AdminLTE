@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>ESEN CMS Web Site | Socios</title>
+  <!-- Tell the browser to be responsive to screen width -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="../../plugins/fontawesome-free/css/all.min.css">
+  <!-- Ionicons 
+  <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">-->
+  <!-- DataTables -->
+  <link rel="stylesheet" href="../../plugins/datatables-bs4/css/dataTables.bootstrap4.css">
+  <!-- Select2 -->
+  <link rel="stylesheet" href="../../plugins/select2/css/select2.min.css">
+  <link rel="stylesheet" href="../../plugins/select2-bootstrap4-theme/select2-bootstrap4.min.css">
+  <!-- Bootstrap4 Duallistbox -->
+  <link rel="stylesheet" href="../../plugins/bootstrap4-duallistbox/bootstrap-duallistbox.min.css">
+ <!-- Tempusdominus Bbootstrap 4 -->
+ <link rel="stylesheet" href="../../plugins/tempusdominus-bootstrap-4/css/tempusdominus-bootstrap-4.min.css">
+  <!-- Theme style -->
+  <link rel="stylesheet" href="../../dist/css/adminlte.min.css">
+  <!-- summernote -->
+  <link rel="stylesheet" href="../plugins/summernote/summernote-bs4.css">
+  <!-- Google Font: Source Sans Pro 
+  <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">-->
+  <link rel="icon" href="/dist/img/logo1.png" type="image/png" />
+  <script src="/dist/js/general.js"></script>
+  <script src="../node_modules/axios/dist/axios.min.js"></script>
+
+</head>
+<body class="hold-transition sidebar-mini" onload="checkCookie()">
+<div class="wrapper">
+  <!-- Navbar -->
+  <nav class="main-header navbar navbar-expand navbar-dark navbar-success">
+    <!-- Left navbar links -->
+    <div id="MainBarMenu"></div>
+  </nav>
+  <!-- /.navbar -->
+  <aside class="main-sidebar elevation-4 sidebar-light-success">
+    <!-- Brand Logo -->
+    <a href="/inside.html" class="brand-link">
+      <img src="../dist/img/logo.svg" alt="ESEN Logo" >
+      
+    </a>
+
+    <!-- Sidebar -->
+    <div class="sidebar">
+      
+      <div id="Menu"></div>
+    </div>
+    <!-- /.sidebar -->
+  </aside>
+
+  <!-- Content Wrapper. Contains page content -->
+  <div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+      <div class="container-fluid">
+        <div class="row mb-2">
+          <div class="col-sm-6">
+            <h1>Socios</h1>
+          </div>
+          <div class="col-sm-6 text-right">
+            <button type="button" class="btn btn-secondary" data-toggle="modal" data-target="#modal-add">Adicionar</button>
+          </div>
+        </div>
+      </div><!-- /.container-fluid -->
+    </section>
+
+    <!-- Main content -->
+    <section class="content">
+      <div class="row">
+        <div class="col-12">
+
+          <!-- /.card -->
+
+          <div class="card">
+            <div class="card-header">
+              <h3 class="card-title">Listado de Socios</h3>
+            </div>
+            <!-- /.card-header -->
+            <div class="card-body">
+              <div class="mb-2">           
+                
+                
+              
+            </div>
+              <table id="SocioComercial" class="table table-bordered table-striped table-hover table-responsive-lg">
+                <thead>
+                <tr>
+                  <th>Acciones</th>
+                  <th>Id</th>
+                  <th>Titulo</th>
+                  <th>URL</th>
+                  <th>Foto</th>
+                  
+                </tr>
+                </thead>
+                <tbody>        
+                </tbody>
+                <tfoot>
+                    <tr>
+                        <th>Acciones</th>
+                        <th>Id</th>
+                        <th>Titulo</th>
+                        <th>URL</th>
+                        <th>Foto</th>
+                      
+                      </tr>
+                </tfoot>
+              </table>
+            </div>
+            <!-- /.card-body -->
+          </div>
+          <!-- /.card -->
+        </div>
+        <!-- /.col -->
+      </div>
+      <!-- /.row -->
+    </section>
+    <!-- /.content -->
+  </div>
+  <!-- /.content-wrapper -->
+  <footer class="main-footer">
+    <strong>Copyright &copy; 2020 ESEN Development Team</a>.</strong>
+    All rights reserved.
+    <div class="float-right d-none d-sm-inline-block">
+      <b>Version</b> 1.0.0
+    </div>
+  </footer>
+    <!-- /.content-wrapper -->
+    <div class="modal fade" id="modal-add">
+      <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h4 class="modal-title">Adicionando...</h4>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+             <!-- general form elements -->
+             <div class="card card-success">
+              <div class="card-header">
+                
+              </div>
+              <!-- /.card-header -->
+              <!-- form start -->
+              <form role="form">
+                <div class="card-body">
+                  <div class="form-group">
+                    <label for="titulo">Título</label>
+                    <input type="text" class="form-control" id="nombre" placeholder="">
+                  </div>
+                  <div class="form-group">
+                    <label for="resumen">Enlace</label>
+                    <input type="text" class="form-control" id="url" placeholder="">
+                  </div>
+                  <div class="form-group">
+                    <label for="imagenBanner">Logo</label>
+                    <div class="input-group">
+                      <div class="custom-file">
+                        <input type="file" class="custom-file-input" id="imagenLogo">
+                        <label class="custom-file-label" for="imagenLogo">Seleccionar imagen</label>
+                      </div>
+                      <div class="input-group-append">
+                        <span class="input-group-text" id="">Upload</span>
+                      </div>
+                    </div>
+                  </div>
+                 
+                </div>
+                <!-- /.card-body -->
+
+                <div class="card-footer">
+                  <button type="submit" class="btn btn-success">Guardar</button>
+                </div>
+              </form>
+            </div>
+            <!-- /.card -->
+
+          </div>
+          <div class="modal-footer justify-content-between">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Regresar</button>
+           </div>
+        </div>
+        <!-- /.modal-content -->
+      </div>
+      <!-- /.modal-dialog -->
+    </div>
+    <!-- /.modal -->
+       <!-- /.content-wrapper -->
+       <div class="modal fade" id="modal-edit">
+        <div class="modal-dialog modal-lg">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h4 class="modal-title">Editando...</h4>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+               <!-- general form elements -->
+               <div class="card card-success">
+                <div class="card-header">
+                  <h3 class="card-title">ID:1</h3>
+                </div>
+                <!-- /.card-header -->
+                <!-- form start -->
+                <form role="form">
+                  <div class="card-body">
+                    <div class="form-group">
+                      <label for="titulo">Título</label>
+                      <input type="text" class="form-control" id="nombre" placeholder="ASISTUR">
+                    </div>
+                    <div class="form-group">
+                      <label for="resumen">Enlace</label>
+                      <input type="text" class="form-control" id="url" placeholder="http://www.asistur.cu/">
+                    </div>
+                    <div class="form-group">
+                      <label for="imagenBanner">Logo</label>
+                      <div class="input-group">
+                        <div class="custom-file">
+                          <input type="file" class="custom-file-input" id="imagenLogo">
+                          <label class="custom-file-label" for="imagenLogo">Seleccionar imagen</label>
+                        </div>
+                        <div class="input-group-append">
+                          <span class="input-group-text" id="">Upload</span>
+                        </div>
+                      </div>
+                    </div>
+                   
+                  </div>
+                  <!-- /.card-body -->
+  
+                  <div class="card-footer">
+                    <button type="submit" class="btn btn-success">Guardar</button>
+                  </div>
+                </form>
+              </div>
+              <!-- /.card -->
+  
+            </div>
+            <div class="modal-footer justify-content-between">
+              <button type="button" class="btn btn-default" data-dismiss="modal">Regresar</button>
+             </div>
+          </div>
+          <!-- /.modal-content -->
+        </div>
+        <!-- /.modal-dialog -->
+      </div>
+      <!-- /.modal -->
+     <!-- /.content-wrapper -->
+     <div class="modal fade" id="modal-delete">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          
+          <div class="modal-body"><div class="col-md-12 text-center"> <p> ¿Esta seguro que desea eliminar el socio?</p></div>
+          </div>
+          <div class="modal-footer justify-content-between">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
+            <button type="button" class="btn btn-danger">Eliminar</button>
+          </div>
+        </div>
+        <!-- /.modal-content -->
+      </div>
+      <!-- /.modal-dialog -->
+    </div>
+    <!-- /.modal -->
+  
+  <!-- Control Sidebar -->
+  <aside class="control-sidebar control-sidebar-dark">
+    <!-- Control sidebar content goes here -->
+  </aside>
+  <!-- /.control-sidebar -->
+</div>
+<!-- ./wrapper -->
+
+<!-- jQuery -->
+<script src="../../plugins/jquery/jquery.min.js"></script>
+<!-- Bootstrap 4 -->
+<script src="../../plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+<!-- DataTables -->
+<script src="../../plugins/datatables/jquery.dataTables.js"></script>
+<script src="../../plugins/datatables-bs4/js/dataTables.bootstrap4.js"></script>
+<!-- InputMask -->
+<script src="../../plugins/moment/moment.min.js"></script>
+<script src="../../plugins/inputmask/min/jquery.inputmask.bundle.min.js"></script>
+<!-- Tempusdominus Bootstrap 4 -->
+<script src="../../plugins/tempusdominus-bootstrap-4/js/tempusdominus-bootstrap-4.min.js"></script>
+<!-- Bootstrap Switch -->
+<script src="../../plugins/bootstrap-switch/js/bootstrap-switch.min.js"></script>
+<!-- AdminLTE App -->
+<script src="../../dist/js/adminlte.min.js"></script>
+<!-- AdminLTE for demo purposes -->
+<script src="../../dist/js/demo.js"></script>
+<script src="../../plugins/summernote/summernote-bs4.min.js"></script>
+<script  src="../../dist/js/partners.js"></script>
+<!-- page script -->
+<script>
+     
+$("input[data-bootstrap-switch]").each(function(){
+      $(this).bootstrapSwitch('state', $(this).prop('checked'));
+    });
+    // Summernote
+    $('.textarea').summernote()
+    console.log ($(location).attr('pathname'));  // index.php
+  
+  
+</script>
+</body>
+</html>
