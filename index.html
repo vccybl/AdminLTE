@@ -9,14 +9,14 @@
 
   <!-- Font Awesome -->
   <link rel="stylesheet" href="plugins/fontawesome-free/css/all.min.css">
-  <!-- Ionicons -->
-  <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+  <!-- Ionicons 
+  <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">-->
   <!-- icheck bootstrap -->
   <link rel="stylesheet" href="plugins/icheck-bootstrap/icheck-bootstrap.min.css">
   <!-- Theme style -->
   <link rel="stylesheet" href="dist/css/adminlte.min.css">
-  <!-- Google Font: Source Sans Pro -->
-  <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
+  <!-- Google Font: Source Sans Pro
+  <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet"> -->
   <link rel="icon" href="/dist/img/logo1.png" type="image/png" />
   <script src="node_modules/axios/dist/axios.min.js"></script>
   </head>
@@ -33,7 +33,7 @@
 
       <form role="form" id="LoginForm" method="POST" action="inside.html">
         <div class="input-group mb-3">
-          <input type="text" class="form-control" placeholder="Login" name="email" id="Email1">
+          <input type="text" class="form-control" placeholder="Login" name="username" id="Email1">
           <div class="input-group-append">
             <div class="input-group-text">
               <span class="fas fa-envelope"></span>
@@ -73,51 +73,59 @@
 <!-- jquery-validation -->
 <script src="../../plugins/jquery-validation/jquery.validate.min.js"></script>
 <script src="../../plugins/jquery-validation/additional-methods.min.js"></script>
+<script src="../../plugins/jquery-validation/localizacion/messages_es.min.js"></script>
 
 <!-- AdminLTE App -->
 
 <script type="text/javascript">
-  $(document).ready(function () {
-    $.validator.setDefaults({
-      submitHandler: function () {
-      //alert( "Formulario enviado satisfactoriamente" );
-        //$('#LoginForm').submit();
-      }
-    });
-    $('#LoginForm').validate({
-      rules: {
-        email: {
-          required: true,
-          minlength: 5
+$(document).ready(function() {
+  $.validator.setDefaults({
+    submitHandler: function () {
+      //alert( "Form successful submitted!" );
+    }
+  });
+$('#LoginForm').validate({
+    rules: {
+        username: {
+            minlength: 3,
+            maxlength: 15,
+            required: true
         },
         password: {
-          required: true,
-          minlength: 5
-        },
-      },
-      messages: {
-        email: {
-          required: "Por favor introduzca su login",
-          email: "Su login debe tener al menos 5 caracteres"
+            minlength: 3,
+            maxlength: 15,
+            required: true
+        }
+    },
+    messages: {
+        username: {
+          required: "Por favor introduzca el login",
+          username: "El login debe tener al menos 5 caracteres"
         },
         password: {
-          required: "Por favor introduzca su clave",
-          minlength: "Su clave debe tener al menos 5 caracteres"
+          required: "Por favor introduzca la clave",
+          minlength: "La clave debe tener al menos 5 caracteres"
         }
       },
-      errorElement: 'span',
-      errorPlacement: function (error, element) {
-        error.addClass('invalid-feedback');
-        element.closest('.input-group').append(error);
-      },
-      highlight: function (element, errorClass, validClass) {
-        $(element).addClass('is-invalid');
-      },
-      unhighlight: function (element, errorClass, validClass) {
-        $(element).removeClass('is-invalid');
-      }
-    });
-  });
+    highlight: function(element) {
+        $(element).closest('.form-group').addClass('has-error');
+    },
+    unhighlight: function(element) {
+        $(element).closest('.form-group').removeClass('has-error');
+    },
+    errorElement: 'span',
+    errorClass: 'help-block',
+    errorPlacement: function(error, element) {
+        if (element.parent('.input-group').length) {
+            error.insertAfter(element.parent());
+        } else {
+            error.insertAfter(element);
+        }
+    }
+});
+
+});
+
   $("#LoginForm").submit(function(event) {
     event.preventDefault();
         const main = async () => {
