@@ -28,6 +28,7 @@ class CRUD {
           let res = await axios.post(this.url+path,this.params,this.config);
           var token=res.data["jwttoken"]
           console.log(res.data)
+          
           expireCookie ("mine")
           setCookie ("mine",token,5,"/")
           window.location.replace("inside.html");
@@ -62,7 +63,45 @@ class CRUD {
             console.log('Error', error.message);
           }
           console.log(error.config);
-          window.location.replace("noauth.html");
+          
+        };
+    }; 
+    async postaction(path) {
+      try {
+          console.log(this.params)
+          let res = await axios.post(this.url+path,this.params,this.config);
+          let dataUPDATE = res.data 
+          return dataUPDATE;
+        } 
+        catch(error) {
+          if (error.response) {
+            console.log(error.response.status);
+            console.log(error.response.headers);
+          } else if (error.request) {
+            console.log(error.request);
+          } else {
+            console.log('Error', error.message);
+          }
+          console.log(error.config);
+         
+        };
+    }; 
+    async deleteuser(path) {
+      try {
+          let res = await axios.delete(this.url+path,this.config);
+          let dataDELETE = res.data 
+          return dataDELETE;
+        } 
+        catch(error) {
+          if (error.response) {
+            console.log(error.response.status);
+            console.log(error.response.headers);
+          } else if (error.request) {
+            console.log(error.request);
+          } else {
+            console.log('Error', error.message);
+          }
+          console.log(error.config);
         };
     }; 
 };

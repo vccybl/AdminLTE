@@ -1,6 +1,6 @@
 //API url definition
 window.ApiURL='http://localhost:8080/api/'
-
+window.WebURL='http://localhost:3000/'
 function setCookie(cname,cvalue,exdays,path) {
     var d = new Date();
     d.setTime(d.getTime() + (exdays * 24 * 60 * 60 * 1000));

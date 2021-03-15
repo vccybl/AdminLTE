@@ -1,14 +1,12 @@
 const getSocioComercial = async function makeGetRequest() {
     try {
         let token=getCookie("mine")
-        //alert (token)
         let axiosConfigGET = {
             headers: {
               'Authorization': `Bearer ${token}`
             }
           };
         let res = await axios.get('http://localhost:8080/api/admin/seccion/elemento/list/SOCIOCOMERCIAL',axiosConfigGET);
-        //console.log (res.data)
         return res.data; 
       } 
       catch(error) {
@@ -24,48 +22,6 @@ const getSocioComercial = async function makeGetRequest() {
       };
 };
 
-const createTR = (item,index) => {
-    var tableRef = document.getElementById('news').getElementsByTagName('tbody')[0];
-    var newRow   = tableRef.insertRow();
-
-    // Append a text node to the cell
-   
-    for (var j = 0; j < 6; j++) {
-      // Create a <td> element and a text node, make the text
-      // node the contents of the <td>, and put the <td> at
-      // the end of the table row
-      // Insert a cell in the row at index 0  
-      var newCell  = newRow.insertCell(j);
-      switch(j) {
-        case 0:
-          var cellText = document.createTextNode('Acciones');
-          break;
-        case 1:
-          var cellText = document.createTextNode(item.id);
-          break;
-        case 2:
-          var cellText = document.createTextNode(item.titulo);
-          break;
-        case 3:
-          var cellText = document.createTextNode(item.texto);
-          break;
-        case 4:
-          var cellText = document.createTextNode(item.imagen);
-          break;
-        case 5:
-          var texto="<div class=\"custom-control custom-switch custom-switch-off-danger custom-switch-on-success\"><input type=\"checkbox\" class=\"custom-control-input\" id=\"customSwitch1\" checked><label class=\"custom-control-label\" for=\"customSwitch1\"></label></div>"
-          var cellText = document.createTextNode(texto);
-          break;
-        default:
-          // code block
-      }                  
-      if (j == 0) newCell.innerHTML='<button type="button" data-id="'+item.id+'" class="btn btn-success btn-xs" data-toggle="modal" data-target="#modal-edit"><i class="far fa-edit"></i></button><button type="button" class="btn btn-danger btn-xs" data-toggle="modal" data-target="#modal-delete"><i class="far fa-times-circle" title="Eliminar"></i></button>'                
-      else if (j == 5)  newCell.innerHTML='<div class=\"custom-control custom-switch custom-switch-off-danger custom-switch-on-success\"><input type=\"checkbox\" class=\"custom-control-input\" id=\"customSwitch1\" checked><label class=\"custom-control-label\" for=\"customSwitch1\"></label></div>'
-      else newCell.appendChild(cellText); 
-    }
-   // Add some text to the new cells:
-    return
-  };
 
 const addTodosToDOM = todos => {
       $("#SocioComercial").DataTable( {
@@ -117,6 +73,7 @@ const main = async () => {
 };
 
 var mostrado = main();
+
 const updatenoticias = async () => {
   try {
     const rbs = document.querySelectorAll('input[name="r3"]');
@@ -146,18 +103,9 @@ const updatenoticias = async () => {
         'Authorization': `Bearer ${token}`
       }
     }
-    //console.log(JSON.stringify(paramsGET))
-    //alert (JSON.stringify(paramsGET))
     let resUPDATE = await axios.post('http://localhost:8080/api/admin/seccion/elemento/update', paramsGET, axiosConfigGET)
     let dataUPDATE = resUPDATE.data
     const body = chunksParser(dataUPDATE);
-    alert ("aqui")
-    console.log(resUPDATE.data)
-    console.log(`Status: ${resUPDATE.status}`)
-    console.log(`Server: ${resUPDATE.headers.server}`)
-    console.log(`Date: ${resUPDATE.headers.date}`)
-    console.log(resUPDATE.data)
-    //alert(JSON.stringify(dataUPDATE))
     return dataUPDATE; 
   }
   catch (error1) {

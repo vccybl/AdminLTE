@@ -427,4 +427,5 @@
 
 $(function(){
   $("#Menu").load("/pages/menu.html"); 
+  $("#MainBarMenu").load("/pages/mainbar.html"); 
 });
